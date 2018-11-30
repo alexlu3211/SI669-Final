@@ -1,0 +1,86 @@
+<ion-header no-border>
+
+  <ion-navbar>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<!-- The default information -->
+	<div class="default">
+		<img src="../../assets/imgs/profile/profile_0.jpg"/>
+		<ion-item>
+			<ion-label>
+			 {{profileEntries.name}}
+			</ion-label>
+
+			<ion-label>
+			 {{profileEntries.location}}
+			</ion-label>
+		</ion-item>
+
+		<ion-item>
+          <button ion-button (click)="editEntry(profileEntries.id)">Edit</button>
+        </ion-item>
+
+
+  <ion-grid>
+    <h3>Allergy</h3>
+    <ion-row>
+      <ion-col><button full ion-button>Egg</button></ion-col>
+      <ion-col><button full ion-button>Fish</button></ion-col>
+      <ion-col><button full ion-button>Crustacean</button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><button full ion-button>Nut</button></ion-col>
+      <ion-col><button full ion-button>Soy</button></ion-col>
+      <ion-col><button full ion-button>Milk</button></ion-col>
+    </ion-row>
+</ion-grid>
+
+
+  <ion-grid>
+    <h3>Allergy</h3>
+    <ion-row>
+      <ion-col><button full ion-button>Pizza</button></ion-col>
+      <ion-col><button full ion-button>Burger</button></ion-col>
+      <ion-col><button full ion-button>Salad</button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><button full ion-button>Thai</button></ion-col>
+      <ion-col><button full ion-button>Asian</button></ion-col>
+      <ion-col><button full ion-button>Chinese</button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><button full ion-button>Mexican</button></ion-col>
+      <ion-col><button full ion-button>Indian</button></ion-col>
+      <ion-col><button full ion-button>Korean</button></ion-col>
+    </ion-row>
+
+</ion-grid>
+
+		<ion-item>
+			<ion-label stacked color="primary">Cost range</ion-label>
+			 {{profileEntries.cost}}
+
+			<ion-label stacked color="primary">Number of accompany</ion-label>
+			 {{profileEntries.accompany}}
+		</ion-item>
+
+		<ion-item>
+			<ion-label stacked color="primary">Introduction</ion-label>
+			<ion-label>
+			 {{profileEntries.intro}}
+			</ion-label>
+		</ion-item>
+
+
+	</div>
+
+
+
+
+</ion-content>

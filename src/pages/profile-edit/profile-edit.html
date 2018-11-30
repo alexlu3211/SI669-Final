@@ -1,0 +1,110 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>profile_edit</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<!-- When Edit button is clicked or there is no information -->
+
+	<div class="edit">
+		<ion-item (click)="takePic()">
+			<img [src]="profileEntries.pic"/>
+		</ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="Name" [(ngModel)]="profileEntries.name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" placeholder="Location" [(ngModel)]="profileEntries.location"></ion-input>
+        </ion-item>
+
+  <ion-grid>
+    <h3>Allergy</h3>
+    <ion-row>
+      <ion-col><button full ion-button>Egg</button></ion-col>
+      <ion-col><button full ion-button>Fish</button></ion-col>
+      <ion-col><button full ion-button>Crustacean</button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><button full ion-button>Nut</button></ion-col>
+      <ion-col><button full ion-button>Soy</button></ion-col>
+      <ion-col><button full ion-button>Milk</button></ion-col>
+    </ion-row>
+</ion-grid>
+
+
+  <ion-grid>
+    <h3>Allergy</h3>
+    <ion-row>
+      <ion-col><button full ion-button>Pizza</button></ion-col>
+      <ion-col><button full ion-button>Burger</button></ion-col>
+      <ion-col><button full ion-button>Salad</button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><button full ion-button>Thai</button></ion-col>
+      <ion-col><button full ion-button>Asian</button></ion-col>
+      <ion-col><button full ion-button>Chinese</button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><button full ion-button>Mexican</button></ion-col>
+      <ion-col><button full ion-button>Indian</button></ion-col>
+      <ion-col><button full ion-button>Korean</button></ion-col>
+    </ion-row>
+
+</ion-grid>
+
+	    <ion-item>
+	      <ion-label stacked color="primary">Cost range</ion-label>
+	      <ion-select [(ngModel)]="profileEntries.cost">
+	        <ion-option value="cost_range1">$0.00-5.00</ion-option>
+	        <ion-option value="cost_range2">$0.00-10.00</ion-option>
+	        <ion-option value="cost_range3">$0.00-15.00</ion-option>
+	        <ion-option value="cost_range4">$0.00-20.00</ion-option>
+	        <ion-option value="cost_range5">$0.00-30.00</ion-option>
+	        <ion-option value="cost_range6">$0.00-50.00</ion-option>
+	        <ion-option value="cost_range7">More than $50.00</ion-option>
+	   	  </ion-select>
+	    </ion-item>
+
+	    <ion-item>
+	      <ion-label stacked color="primary">Number of accompany</ion-label>
+	      <ion-select [(ngModel)]="profileEntries.accompany">
+	        <ion-option value="accompany_range1">1</ion-option>
+	        <ion-option value="accompany_range2">2</ion-option>
+	        <ion-option value="accompany_range3">3</ion-option>
+	        <ion-option value="accompany_range4">4</ion-option>
+	        <ion-option value="accompany_range5">5</ion-option>
+	        <ion-option value="accompany_range6">More than 5</ion-option>
+	        <ion-option value="accompany_range7">Doesn't matter</ion-option>
+	   	  </ion-select>
+	    </ion-item>
+
+	    <ion-item>
+	      <ion-label stacked color="primary">Introduction</ion-label>
+	      <ion-textarea [(ngModel)]="profileEntries.intro">
+	      </ion-textarea>
+	    </ion-item>
+
+       <ion-item>
+          <button ion-button (click)="saveEntry()">Ok</button>
+       </ion-item>
+
+   </div>
+
+
+
+<!--
+
+	<ion-icon name="alert"></ion-icon>
+	<p>Profile is not exist</p>
+    <ion-item>
+      <button ion-button (click)="createProfile()">Create Profile</button>
+    </ion-item>
+
+ -->
+
+
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "eatinder",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

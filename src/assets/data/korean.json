@@ -1,0 +1,834 @@
+{
+    "businesses": [
+        {
+            "id": "putshCFiTdP7LwNDVVILTQ",
+            "alias": "tomukun-korean-barbeque-ann-arbor",
+            "name": "Tomukun Korean Barbeque",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/AGW29kjWkeDKn7P-M777ew/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/tomukun-korean-barbeque-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 306,
+            "categories": [
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                },
+                {
+                    "alias": "bbq",
+                    "title": "Barbeque"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 42.2795502,
+                "longitude": -83.7427918
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "505 E Liberty St",
+                "address2": "Ste 200",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48104",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "505 E Liberty St",
+                    "Ste 200",
+                    "Ann Arbor, MI 48104"
+                ]
+            },
+            "phone": "+17343692602",
+            "display_phone": "(734) 369-2602",
+            "distance": 336.4804016653341
+        },
+        {
+            "id": "3r_kPEIETjPZtXpSeVnpVQ",
+            "alias": "miss-kim-ann-arbor",
+            "name": "Miss Kim",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/vD_mUDCqc6ztPMuELP3F7Q/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/miss-kim-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 117,
+            "categories": [
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                },
+                {
+                    "alias": "tapasmallplates",
+                    "title": "Tapas/Small Plates"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 42.2845916111551,
+                "longitude": -83.7464769846905
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "415 N 5th Ave",
+                "address2": "",
+                "address3": null,
+                "city": "Ann Arbor",
+                "zip_code": "48104",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "415 N 5th Ave",
+                    "Ann Arbor, MI 48104"
+                ]
+            },
+            "phone": "+17342750099",
+            "display_phone": "(734) 275-0099",
+            "distance": 972.6208070211635
+        },
+        {
+            "id": "kqTMas0K148Qd-hfGbyEkw",
+            "alias": "kosmos-bop-shop-ann-arbor",
+            "name": "KOSMO'S Bop Shop",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/t0yC_4a5kZHFhkMjo2w8ng/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/kosmos-bop-shop-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 18,
+            "categories": [
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 42.2791380130444,
+                "longitude": -83.7500103937961
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "308 S Ashley St",
+                "address2": "",
+                "address3": null,
+                "city": "Ann Arbor",
+                "zip_code": "48104",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "308 S Ashley St",
+                    "Ann Arbor, MI 48104"
+                ]
+            },
+            "phone": "+17343694767",
+            "display_phone": "(734) 369-4767",
+            "distance": 769.7529362620204
+        },
+        {
+            "id": "Q0rphlUwDMcItwF8VnszqQ",
+            "alias": "bewon-ann-arbor-2",
+            "name": "Bewon",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/D6uC_Yltuy0Kq_bWNOvDXA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/bewon-ann-arbor-2?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 118,
+            "categories": [
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 42.3052176,
+                "longitude": -83.6920978
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "3574 Plymouth Rd",
+                "address2": "",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48105",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "3574 Plymouth Rd",
+                    "Ann Arbor, MI 48105"
+                ]
+            },
+            "phone": "+17343321004",
+            "display_phone": "(734) 332-1004",
+            "distance": 5132.922632932972
+        },
+        {
+            "id": "pxbyA680Y2Y33YrF1YxqUA",
+            "alias": "seoul-street-ann-arbor",
+            "name": "Seoul Street",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/4tuCRA9rBrA0Zi1H-rPdNg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/seoul-street-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 337,
+            "categories": [
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                }
+            ],
+            "rating": 3.5,
+            "coordinates": {
+                "latitude": 42.298542390286,
+                "longitude": -83.71994671592
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "1771 Plymouth Rd",
+                "address2": "Ste 101",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48105",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "1771 Plymouth Rd",
+                    "Ste 101",
+                    "Ann Arbor, MI 48105"
+                ]
+            },
+            "phone": "+17347190085",
+            "display_phone": "(734) 719-0085",
+            "distance": 2988.8823749316725
+        },
+        {
+            "id": "y3dVChSa5c0m8jAQJvH6Vg",
+            "alias": "arirang-ann-arbor",
+            "name": "Arirang",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/S7a8LNd9jrvEo7tdixX7og/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/arirang-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 160,
+            "categories": [
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 42.2407785,
+                "longitude": -83.7707544
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "3135 Oak Valley Dr",
+                "address2": "",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48103",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "3135 Oak Valley Dr",
+                    "Ann Arbor, MI 48103"
+                ]
+            },
+            "phone": "+17342225959",
+            "display_phone": "(734) 222-5959",
+            "distance": 4555.2373978884425
+        },
+        {
+            "id": "fKGwQ-slqLmAZu2T6yVQJA",
+            "alias": "rich-j-c-korean-restaurant-ann-arbor-2",
+            "name": "Rich J C Korean Restaurant",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/uGerY8PF5wMCKjsuT-AakQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/rich-j-c-korean-restaurant-ann-arbor-2?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 144,
+            "categories": [
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 42.2750546783209,
+                "longitude": -83.7327758967876
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "1313 S University Ave",
+                "address2": "",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48104",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "1313 S University Ave",
+                    "Ann Arbor, MI 48104"
+                ]
+            },
+            "phone": "+17347692288",
+            "display_phone": "(734) 769-2288",
+            "distance": 724.4071430174338
+        },
+        {
+            "id": "6bI31ExV1CGYoy4TGHonnQ",
+            "alias": "one-bowl-asian-cuisine-ann-arbor-4",
+            "name": "One Bowl Asian Cuisine",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/P7LbR9B_QaxszCUCQAU3iw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/one-bowl-asian-cuisine-ann-arbor-4?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 112,
+            "categories": [
+                {
+                    "alias": "vietnamese",
+                    "title": "Vietnamese"
+                },
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 42.274783,
+                "longitude": -83.7333166
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1220 S University Ave",
+                "address2": null,
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48104",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "1220 S University Ave",
+                    "Ann Arbor, MI 48104"
+                ]
+            },
+            "phone": "+17347477006",
+            "display_phone": "(734) 747-7006",
+            "distance": 686.6976744616308
+        },
+        {
+            "id": "Ohj0p0KdNzdNvUcYfuJElg",
+            "alias": "belly-deli-ann-arbor",
+            "name": "Belly Deli",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/LsMZVJAiCrXHKsCc77iqmQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/belly-deli-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 172,
+            "categories": [
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                },
+                {
+                    "alias": "asianfusion",
+                    "title": "Asian Fusion"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 42.275187,
+                "longitude": -83.732509
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "1317 S University Ave",
+                "address2": "",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48104",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "1317 S University Ave",
+                    "Ann Arbor, MI 48104"
+                ]
+            },
+            "phone": "+17346698888",
+            "display_phone": "(734) 669-8888",
+            "distance": 738.0824165205825
+        },
+        {
+            "id": "Q9LaqaZE-AYp8u7nNEGWIA",
+            "alias": "kangs-korean-restaurant-ann-arbor-3",
+            "name": "Kang's Korean Restaurant",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/W64N_PKkI0lGNEVJ8-fPdA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/kangs-korean-restaurant-ann-arbor-3?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 147,
+            "categories": [
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 42.2750546783209,
+                "longitude": -83.7325673550367
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "1327 S University Ave",
+                "address2": "",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48104",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "1327 S University Ave",
+                    "Ann Arbor, MI 48104"
+                ]
+            },
+            "phone": "+17347611327",
+            "display_phone": "(734) 761-1327",
+            "distance": 754.334301737708
+        },
+        {
+            "id": "gZtTZ_JWEzpHpnHEIsx-6A",
+            "alias": "broadway-cafe-and-hoagie-ann-arbor",
+            "name": "Broadway Cafe & Hoagie",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/IricmQShTmGS8QPx-NNuQA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/broadway-cafe-and-hoagie-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 107,
+            "categories": [
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                },
+                {
+                    "alias": "steak",
+                    "title": "Steakhouses"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 42.290602,
+                "longitude": -83.7367917
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "1139 Broadway St",
+                "address2": "",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48105",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "1139 Broadway St",
+                    "Ann Arbor, MI 48105"
+                ]
+            },
+            "phone": "+17347698900",
+            "display_phone": "(734) 769-8900",
+            "distance": 1586.9020933250301
+        },
+        {
+            "id": "6tbQOkuHA2EXmX4JxPsThQ",
+            "alias": "bells-diner-ann-arbor",
+            "name": "Bell's Diner",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/AOtRBUB0Q9gocZu5O_MSPg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/bells-diner-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 146,
+            "categories": [
+                {
+                    "alias": "breakfast_brunch",
+                    "title": "Breakfast & Brunch"
+                },
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 42.2733738993182,
+                "longitude": -83.7764582637543
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "2167 W Stadium Blvd",
+                "address2": "",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48103",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "2167 W Stadium Blvd",
+                    "Ann Arbor, MI 48103"
+                ]
+            },
+            "phone": "+17349950226",
+            "display_phone": "(734) 995-0226",
+            "distance": 2923.016760042736
+        },
+        {
+            "id": "QRQJMymVA0je7sKtpoJjbw",
+            "alias": "hana-korean-restaurant-ypsilanti",
+            "name": "HANA Korean Restaurant",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/EKGSSONUuUahIhewwRJogA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/hana-korean-restaurant-ypsilanti?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 103,
+            "categories": [
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 42.2448425292969,
+                "longitude": -83.584358215332
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "1346 E Michigan Ave",
+                "address2": "",
+                "address3": "",
+                "city": "Ypsilanti",
+                "zip_code": "48198",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "1346 E Michigan Ave",
+                    "Ypsilanti, MI 48198"
+                ]
+            },
+            "phone": "+17344832455",
+            "display_phone": "(734) 483-2455",
+            "distance": 13386.564224909393
+        },
+        {
+            "id": "nZNoTZ0bqVW-4EG1Aymr_g",
+            "alias": "seoul-garden-ann-arbor",
+            "name": "Seoul Garden",
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/g_sld6LK-AV6MnyoItXOlA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/seoul-garden-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 259,
+            "categories": [
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                },
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                }
+            ],
+            "rating": 3.5,
+            "coordinates": {
+                "latitude": 42.2423,
+                "longitude": -83.73416
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "3125 Boardwalk Dr",
+                "address2": "",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48108",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "3125 Boardwalk Dr",
+                    "Ann Arbor, MI 48108"
+                ]
+            },
+            "phone": "+17349972121",
+            "display_phone": "(734) 997-2121",
+            "distance": 3888.3012010813814
+        },
+        {
+            "id": "c4NbEsln6dw1sdJRnpiavA",
+            "alias": "macheko-grill-ypsilanti",
+            "name": "Macheko Grill",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/dRlbQbSrNTp0tcyEDG_9gA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/macheko-grill-ypsilanti?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 120,
+            "categories": [
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 42.2303676630853,
+                "longitude": -83.6458172680298
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "2283 Ellsworth Rd",
+                "address2": "",
+                "address3": "",
+                "city": "Ypsilanti",
+                "zip_code": "48197",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "2283 Ellsworth Rd",
+                    "Ypsilanti, MI 48197"
+                ]
+            },
+            "phone": "+17344348989",
+            "display_phone": "(734) 434-8989",
+            "distance": 9395.042826290402
+        },
+        {
+            "id": "18NlgiRTcSo4NNsM_xs-OA",
+            "alias": "kosmo-ann-arbor",
+            "name": "Kosmo",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/JrLNUAE8H_yq9fIn0L5jag/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/kosmo-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 114,
+            "categories": [
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                },
+                {
+                    "alias": "tradamerican",
+                    "title": "American"
+                }
+            ],
+            "rating": 3.5,
+            "coordinates": {
+                "latitude": 42.2843231,
+                "longitude": -83.7460385
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "407 N 5th Ave",
+                "address2": "Fl 1",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48104",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "407 N 5th Ave",
+                    "Fl 1",
+                    "Ann Arbor, MI 48104"
+                ]
+            },
+            "phone": "+17346684070",
+            "display_phone": "(734) 668-4070",
+            "distance": 941.9881843234385
+        },
+        {
+            "id": "UxpA8NPkzh4VVMFN9przmw",
+            "alias": "panda-korean-and-chinese-foods-ann-arbor",
+            "name": "Panda Korean & Chinese Foods",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/AiAPX-10IcCVvAdVvAQYDA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/panda-korean-and-chinese-foods-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 62,
+            "categories": [
+                {
+                    "alias": "chinese",
+                    "title": "Chinese"
+                },
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 42.2449351,
+                "longitude": -83.6996923
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "3020 Packard St",
+                "address2": "",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48108",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "3020 Packard St",
+                    "Ann Arbor, MI 48108"
+                ]
+            },
+            "phone": "+17349716442",
+            "display_phone": "(734) 971-6442",
+            "distance": 4963.13079943071
+        },
+        {
+            "id": "J22tTDuUF9Xc-9MNETNwRQ",
+            "alias": "mama-satto-ann-arbor-2",
+            "name": "MaMa Satto",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/4jbEh-EwBN4RzaApULbZtA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/mama-satto-ann-arbor-2?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 50,
+            "categories": [
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                }
+            ],
+            "rating": 3.5,
+            "coordinates": {
+                "latitude": 42.2789154052734,
+                "longitude": -83.7400207519531
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "715 N University Ave",
+                "address2": "",
+                "address3": null,
+                "city": "Ann Arbor",
+                "zip_code": "48104",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "715 N University Ave",
+                    "Ann Arbor, MI 48104"
+                ]
+            },
+            "phone": "+17342133044",
+            "display_phone": "(734) 213-3044",
+            "distance": 259.928683756907
+        },
+        {
+            "id": "JUy4sBIw2qgvVLgaw4K7ew",
+            "alias": "bopjib-ann-arbor-3",
+            "name": "Bopjib",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/_chnbV3pOtYN3j8NZ4gDuQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/bopjib-ann-arbor-3?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 2,
+            "categories": [
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                }
+            ],
+            "rating": 3,
+            "coordinates": {
+                "latitude": 42.27424,
+                "longitude": -83.73434
+            },
+            "transactions": [],
+            "location": {
+                "address1": "621 Church St",
+                "address2": "",
+                "address3": null,
+                "city": "Ann Arbor",
+                "zip_code": "48104",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "621 Church St",
+                    "Ann Arbor, MI 48104"
+                ]
+            },
+            "phone": "+17346627162",
+            "display_phone": "(734) 662-7162",
+            "distance": 634.9343376981107
+        },
+        {
+            "id": "5tA21JTO3xKfAI_NYCIJqg",
+            "alias": "teriyaki-time-ann-arbor",
+            "name": "Teriyaki Time",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/mUoY5xsV-jk4sxfWFYvbKQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/teriyaki-time-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 49,
+            "categories": [
+                {
+                    "alias": "korean",
+                    "title": "Korean"
+                },
+                {
+                    "alias": "asianfusion",
+                    "title": "Asian Fusion"
+                }
+            ],
+            "rating": 3.5,
+            "coordinates": {
+                "latitude": 42.2836799,
+                "longitude": -83.74608
+            },
+            "transactions": [
+                "delivery"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "314 Detroit St",
+                "address2": "",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48104",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "314 Detroit St",
+                    "Ann Arbor, MI 48104"
+                ]
+            },
+            "phone": "+17349292272",
+            "display_phone": "(734) 929-2272",
+            "distance": 863.5818449852756
+        }
+    ],
+    "total": 25,
+    "region": {
+        "center": {
+            "longitude": -83.74122619628906,
+            "latitude": 42.2767546461982
+        }
+    }
+}
