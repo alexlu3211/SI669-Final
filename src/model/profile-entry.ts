@@ -9,6 +9,4 @@ export class ProfileEntry{
     preference: any[];
     cost: any;
     people: any;
-    intro: string;
-    eventsId: string[];
 }

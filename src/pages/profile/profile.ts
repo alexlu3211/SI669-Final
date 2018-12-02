@@ -18,10 +18,13 @@ export class ProfilePage {
 
   username: string = '';
   profileEntry: ProfileEntry;
+<<<<<<< HEAD
 
   allergyLength: number = 0;
   preferenceLength: number = 0;
 
+=======
+>>>>>>> refs/remotes/origin/master
   private image = PLACEHOLDER_IMAGE;
 
   constructor(public navCtrl: NavController, 
@@ -36,17 +39,30 @@ export class ProfilePage {
     this.dataProvider.loadDummyProfileEntries();
     this.dataProvider.getProfileObservable().subscribe(update => {
       this.profileEntry = dataProvider.getProfileByUsername(this.username);
+<<<<<<< HEAD
 
       this.allergyLength = this.profileEntry.allergy.length;
       this.preferenceLength = this.profileEntry.preference.length;
+=======
+      console.log("here", this.profileEntry);
+>>>>>>> refs/remotes/origin/master
     })
   }
 
   private editEntry(entryID: number) {
+<<<<<<< HEAD
     this.navCtrl.push(ProfileEditPage, {
       "username": this.username,
       "profileEntry": this.profileEntry
     });
   }
 
+=======
+    console.log("editing entry ", entryID);
+    this.navCtrl.push(ProfileEditPage, {"entryID": entryID});
+  }
+
+
+
+>>>>>>> refs/remotes/origin/master
 }
