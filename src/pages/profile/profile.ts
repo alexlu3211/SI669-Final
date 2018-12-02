@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { RestaurantDataProvider } from '../../providers/restaurant-data/restaurant-data';
+
+import { ProfileDataProvider } from '../../providers/profile-data/profile-data';
+import { DataProvider } from '../../providers/data/data';
 
 import { ProfileEditPage } from '../profile-edit/profile-edit';
 import { ProfileEntry } from '../../model/profile-entry';
@@ -15,16 +17,24 @@ const SPINNER_IMAGE: string = "/assets/imgs/spinner.gif";
 })
 export class ProfilePage {
 
-  profileEntries: ProfileEntry[] = [];
+  username: string = '';
+  profileEntry: ProfileEntry;
   private image = PLACEHOLDER_IMAGE;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public restaurantDataProvider: RestaurantDataProvider) {
-    this.restaurantDataProvider.getObservable().subscribe(update => {
-      this.profileEntries = restaurantDataProvider.getEntries();
-      console.log(this.profileEntries);
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              public dataProvider: DataProvider) {
+
+    this.username = dataProvider.getUserName();
+    console.log(this.username);
+    this.profileEntry = new ProfileEntry();
+
+
+    this.dataProvider.loadDummyProfileEntries();
+    this.dataProvider.getProfileObservable().subscribe(update => {
+      this.profileEntry = dataProvider.getProfileByUsername(this.username);
+      console.log("here", this.profileEntry);
     })
-
-
   }
 
   private editEntry(entryID: number) {

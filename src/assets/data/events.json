@@ -1,0 +1,54 @@
+[
+	{
+		"id": "event001",
+		"restaurantId": "putshCFiTdP7LwNDVVILTQ",
+		"date": 1543772035895,
+		"hostId": "test1",
+		"participantsId": [
+			"test2",
+			"test3"
+		]
+	},
+
+	{
+		"id": "event002",
+		"restaurantId": "3r_kPEIETjPZtXpSeVnpVQ",
+		"date": 1543772035895,
+		"hostId": "test3",
+		"participantsId": [
+			"test1",
+			"test4"
+		]
+	},
+
+	{
+		"id": "event003",
+		"restaurantId": "putshCFiTdP7LwNDVVILTQ",
+		"date": 1543772035895,
+		"hostId": "test2",
+		"participantsId": [
+			"test1",
+			"test4"
+		]
+	},
+
+	{
+		"id": "event004",
+		"restaurantId": "kqTMas0K148Qd-hfGbyEkw",
+		"date": 1543772035895,
+		"hostId": "test2",
+		"participantsId": [
+			"test3"
+		]
+	},
+
+	{
+		"id": "event005",
+		"restaurantId": "putshCFiTdP7LwNDVVILTQ",
+		"date": 1543772035895,
+		"hostId": "test4",
+		"participantsId": [
+		]
+	}
+
+]

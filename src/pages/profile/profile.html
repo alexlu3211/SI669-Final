@@ -9,16 +9,17 @@
 
 <ion-content padding>
 
-<!-- The default information -->
+
+
 	<div class="default">
-		<img src="../../assets/imgs/profile/profile_0.jpg"/>
+		<img src="{{ profileEntry.pic }}"/>
 		<ion-item>
 			<ion-label>
-			 {{profileEntries.name}}
+			 {{profileEntry.name}}
 			</ion-label>
 
 			<ion-label>
-			 {{profileEntries.location}}
+			 {{profileEntry.location}}
 			</ion-label>
 		</ion-item>
 
@@ -64,16 +65,16 @@
 
 		<ion-item>
 			<ion-label stacked color="primary">Cost range</ion-label>
-			 {{profileEntries.cost}}
+			 {{profileEntry.cost}}
 
 			<ion-label stacked color="primary">Number of accompany</ion-label>
-			 {{profileEntries.accompany}}
+			 {{profileEntry.accompany}}
 		</ion-item>
 
 		<ion-item>
 			<ion-label stacked color="primary">Introduction</ion-label>
 			<ion-label>
-			 {{profileEntries.intro}}
+			 {{profileEntry.intro}}
 			</ion-label>
 		</ion-item>
 

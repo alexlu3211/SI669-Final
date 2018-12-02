@@ -1,0 +1,86 @@
+{
+	"profiles": [
+		{
+			"username": "test1",
+		    "password": "test1",
+		    "pic": "https://randomuser.me/api/portraits/men/3.jpg",
+		    "name": [
+		    	"Tim",
+		    	"Brown"
+		    ],
+		    "location": "Ann Arbor",
+		    "allergy": "",
+		    "preference": "",
+		    "cost": 5,
+		    "accompany": 3,
+		    "intro": "Hi, I am Tim!",
+		    "eventsId": [
+		    	"event001",
+		    	"event002"
+		    ]
+		},
+
+		{
+			"username": "test2",
+		    "password": "test2",
+		    "pic": "https://randomuser.me/api/portraits/men/32.jpg",
+		    "name": [
+		    	"Paul",
+		    	"Andrea"
+		    ],
+		    "location": "Ann Arbor",
+		    "allergy": "",
+		    "preference": "",
+		    "cost": 4,
+		    "accompany": 5,
+		    "intro": "Hi, I am Paul!",
+		    "eventsId": [
+		    	"event001",
+		    	"event003",
+		    	"event004"
+		    ]
+		},
+
+		{
+			"username": "test3",
+		    "password": "test3",
+		    "pic": "https://randomuser.me/api/portraits/women/36.jpg",
+		    "name": [
+		    	"Dominique",
+		    	"Williams"
+		    ],
+		    "location": "Ann Arbor",
+		    "allergy": "",
+		    "preference": "",
+		    "cost": 3,
+		    "accompany": 4,
+		    "intro": "Hi, I am Dominique!",
+		    "eventsId": [
+		    	"event001",
+		    	"event002",
+		    	"event004"
+		    ]
+		},
+
+		{
+			"username": "test4",
+		    "password": "test4",
+		    "pic": "https://randomuser.me/api/portraits/women/8.jpg",
+		    "name": [
+		    	"May",
+		    	"Wong"
+		    ],
+		    "location": "Ann Arbor",
+		    "allergy": "",
+		    "preference": "",
+		    "cost": 4,
+		    "accompany": 2,
+		    "intro": "Hi, I am May!",
+		    "eventsId": [
+		    	"event002",
+		    	"event003",
+		    	"event005"
+		    ]
+		}
+	]
+}

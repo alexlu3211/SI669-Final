@@ -19,6 +19,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera } from '@ionic-native/camera';
 
 import { RestaurantDataProvider } from '../providers/restaurant-data/restaurant-data';
+import { ProfileDataProvider } from '../providers/profile-data/profile-data';
+import { DataProvider } from '../providers/data/data';
 
 
 @NgModule({
@@ -59,7 +61,9 @@ import { RestaurantDataProvider } from '../providers/restaurant-data/restaurant-
     SplashScreen,
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    RestaurantDataProvider
+    RestaurantDataProvider,
+    ProfileDataProvider,
+    DataProvider
   ]
 })
 export class AppModule {}

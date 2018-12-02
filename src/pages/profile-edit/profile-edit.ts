@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { RestaurantDataProvider } from '../../providers/restaurant-data/restaurant-data';
+import { DataProvider } from '../../providers/data/data';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 
 import { ProfilePage } from '../profile/profile';
@@ -8,13 +8,6 @@ import { ProfileEntry } from '../../model/profile-entry';
 
 const PLACEHOLDER_IMAGE: string = "/assets/imgs/profile/profile_0.jpg";
 const SPINNER_IMAGE: string = "/assets/imgs/spinner.gif";
-
-/**
- * Generated class for the ProfileEditPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -31,25 +24,26 @@ export class ProfileEditPage {
 
 	constructor(public navCtrl: NavController, 
 				public navParams: NavParams,
-				public restaurantDataProvider: RestaurantDataProvider,
+				public dataProvider: DataProvider,
 				private camera: Camera) {
 
 		let entryID = this.navParams.get("entryID");
 
 		if (entryID === undefined) {
 			this.profileEntries = new ProfileEntry();
-			this.profileEntries.id;
+			this.profileEntries.username;
 			this.profileEntries.pic = this.placeholderImage;
-			this.profileEntries.name = "";
+			this.profileEntries.password = "";
+			this.profileEntries.name = [];
 			this.profileEntries.location = "";
 			this.profileEntries.allergy = [];
 			this.profileEntries.preference = [];
 			this.profileEntries.cost = "";
 			this.profileEntries.accompany = "";
 			this.profileEntries.intro = "";
-			this.profileEntries.id = -1; 
+			this.profileEntries.eventsId = []
 		} else {
-			this.profileEntries = this.restaurantDataProvider.getEntryByID(entryID);
+			this.profileEntries = this.dataProvider.getProfileByUsername(entryID);
 			if (this.profileEntries.pic == null) 
 				this.profileEntries.pic = this.placeholderImage
 		}
@@ -65,11 +59,11 @@ export class ProfileEditPage {
 
 	private saveEntry() {
 
-		if (this.profileEntries.id === -1) { 
-			this.restaurantDataProvider.addEntry(this.profileEntries);
+		if (this.profileEntries.username === "") { 
+			// this.dataProvider.addEntry(this.profileEntries);
 		} else {
 			// this.doCheckbox();
-			this.restaurantDataProvider.updateEntry(this.profileEntries.id, this.profileEntries);
+			this.dataProvider.updateProfileEntry(this.profileEntries.username, this.profileEntries);
 		}
 		console.log(this.profileEntries.name)
 		this.navCtrl.pop();

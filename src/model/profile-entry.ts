@@ -1,11 +1,13 @@
 export class ProfileEntry{
-    id: number;
+    username: string;
+    password: string;
     pic: any;
-    name: string;
+    name: string[];
     location: string;
     allergy: any[];
     preference: any[];
     cost: any;
     accompany: any;
     intro: string;
+    eventsId: string[];
 }
