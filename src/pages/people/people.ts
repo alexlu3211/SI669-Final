@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { ProfileEntry } from '../../model/profile-entry';
+import { RestaurantDataProvider } from '../../providers/restaurant-data/restaurant-data';
 
 /**
  * Generated class for the PeoplePage page.
@@ -14,7 +16,14 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class PeoplePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  profileEntries: ProfileEntry[] = [];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public restaurantDataProvider: RestaurantDataProvider) {
+    this.restaurantDataProvider.getObservable().subscribe(update => {
+      this.profileEntries = restaurantDataProvider.getEntries();
+      console.log(this.profileEntries);
+    })
+
   }
 
   ionViewDidLoad() {

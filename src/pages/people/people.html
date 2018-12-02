@@ -9,4 +9,31 @@
 
 <ion-content padding>
 
+	<ion-item>
+	  <ion-label>Turn on the availiability</ion-label>
+	  <ion-toggle [(ngModel)]="availability"></ion-toggle>
+	</ion-item>
+
+	<ion-card *ngFor="let entry of profileEntries">
+		<ion-card-content>
+			
+			<ion-grid>
+			  <ion-row>
+			    <ion-col class="col1">
+			    	<img [src]="entry.pic">
+			    	<p>{{entry.name}}</p>
+			    </ion-col>
+			    <ion-col class="col2">
+			    	<ion-icon ios="ios-remove-circle" md="md-remove-circle"></ion-icon> {{entry.allergy}}
+			        <ion-icon ios="ios-thumbs-up" md="md-thumbs-up"></ion-icon> {{entry.preference}}
+			        <p>{{entry.cost}}</p>
+			        <p>Number of accompany     {{entry.accompany}}</p>
+			        <p>{{entry.intro}}</p>
+			    </ion-col>
+			  </ion-row>
+			</ion-grid>
+
+		</ion-card-content>
+	</ion-card>
+
 </ion-content>
