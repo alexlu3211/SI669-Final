@@ -166,7 +166,7 @@ export class DataProvider {
 			allergy: newEntry.allergy, 
 			preference: newEntry.preference,
 			cost: newEntry.cost,
-			accompany: newEntry.accompany,
+			people: newEntry.people,
 			intro: newEntry.intro,
 			eventsId: newEntry.eventsId
 		});

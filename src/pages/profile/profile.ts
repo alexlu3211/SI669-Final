@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import { ProfileDataProvider } from '../../providers/profile-data/profile-data';
 import { DataProvider } from '../../providers/data/data';
 
 import { ProfileEditPage } from '../profile-edit/profile-edit';
@@ -19,6 +18,10 @@ export class ProfilePage {
 
   username: string = '';
   profileEntry: ProfileEntry;
+
+  allergyLength: number = 0;
+  preferenceLength: number = 0;
+
   private image = PLACEHOLDER_IMAGE;
 
   constructor(public navCtrl: NavController, 
@@ -33,15 +36,17 @@ export class ProfilePage {
     this.dataProvider.loadDummyProfileEntries();
     this.dataProvider.getProfileObservable().subscribe(update => {
       this.profileEntry = dataProvider.getProfileByUsername(this.username);
-      console.log("here", this.profileEntry);
+
+      this.allergyLength = this.profileEntry.allergy.length;
+      this.preferenceLength = this.profileEntry.preference.length;
     })
   }
 
   private editEntry(entryID: number) {
-    console.log("editing entry ", entryID);
-    this.navCtrl.push(ProfileEditPage, {"entryID": entryID});
+    this.navCtrl.push(ProfileEditPage, {
+      "username": this.username,
+      "profileEntry": this.profileEntry
+    });
   }
-
-
 
 }

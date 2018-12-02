@@ -16,6 +16,8 @@ const SPINNER_IMAGE: string = "/assets/imgs/spinner.gif";
 })
 export class ProfileEditPage {
 
+	private username: string;
+	private profileEntry: ProfileEntry;
 
 	private entryTitle: string;
 	private entryText: string;
@@ -27,36 +29,32 @@ export class ProfileEditPage {
 				public dataProvider: DataProvider,
 				private camera: Camera) {
 
-		let entryID = this.navParams.get("entryID");
+		this.username = this.navParams.get("username");
+		this.profileEntry = this.navParams.get("profileEntry");s
 
-		if (entryID === undefined) {
-			this.profileEntries = new ProfileEntry();
-			this.profileEntries.username;
-			this.profileEntries.pic = this.placeholderImage;
-			this.profileEntries.password = "";
-			this.profileEntries.name = [];
-			this.profileEntries.location = "";
-			this.profileEntries.allergy = [];
-			this.profileEntries.preference = [];
-			this.profileEntries.cost = "";
-			this.profileEntries.accompany = "";
-			this.profileEntries.intro = "";
-			this.profileEntries.eventsId = []
-		} else {
-			this.profileEntries = this.dataProvider.getProfileByUsername(entryID);
-			if (this.profileEntries.pic == null) 
-				this.profileEntries.pic = this.placeholderImage
-		}
 
-		console.log("retrieved entry:", this.profileEntries);
+		// if (entryID === undefined) {
+		// 	this.profileEntries = new ProfileEntry();
+		// 	this.profileEntries.username;
+		// 	this.profileEntries.pic = this.placeholderImage;
+		// 	this.profileEntries.password = "";
+		// 	this.profileEntries.name = [];
+		// 	this.profileEntries.location = "";
+		// 	this.profileEntries.allergy = [];
+		// 	this.profileEntries.preference = [];
+		// 	this.profileEntries.cost = "";
+		// 	this.profileEntries.accompany = "";
+		// 	this.profileEntries.intro = "";
+		// 	this.profileEntries.eventsId = []
+		// } else {
+		// 	this.profileEntries = this.dataProvider.getProfileByUsername(entryID);
+		// 	if (this.profileEntries.pic == null) 
+		// 		this.profileEntries.pic = this.placeholderImage
+		// }
+
+		// console.log("retrieved entry:", this.profileEntries);
 	}
-
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfileEditPage');
-  }
-
-
+	
 	private saveEntry() {
 
 		if (this.profileEntries.username === "") { 

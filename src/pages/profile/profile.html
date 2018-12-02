@@ -9,79 +9,56 @@
 
 <ion-content padding>
 
+  <ion-item class="avatar-item">
+    <ion-avatar item-start>
+      <img class="avatar" src="{{ profileEntry.pic }}">
+    </ion-avatar>
+    <h1> {{ profileEntry.name }} </h1>
+    <p> {{ profileEntry.location }} </p>
+    <ion-icon name="create" item-end color="primary"></ion-icon>
+  </ion-item>
 
+  <ion-card>
+    <ion-card-header color="primary">Your Self Introduction</ion-card-header>
+    <ion-card-content>
+      <p *ngIf="profileEntry.intro==''">You haven't set up your introduction yet. Set your introduction to let people know about you!</p>
+      <p *ngIf="profileEntry.intro!=''">{{ profileEntry.intro }}</p>
+    </ion-card-content>
+  </ion-card>
 
-	<div class="default">
-		<img src="{{ profileEntry.pic }}"/>
-		<ion-item>
-			<ion-label>
-			 {{profileEntry.name}}
-			</ion-label>
+  <ion-card>
+    <ion-card-header color="primary">Your Food Allergies</ion-card-header>
+    <ion-card-content>
+      <p *ngIf="allergyLength == 0">You haven't specified any allergies yet.</p>
+      <ion-chip *ngFor = "let item of profileEntry.allergy">
+        <ion-label>{{item}}</ion-label>
+      </ion-chip>
+    </ion-card-content>
+  </ion-card>
 
-			<ion-label>
-			 {{profileEntry.location}}
-			</ion-label>
-		</ion-item>
+  <ion-card>
+    <ion-card-header color="primary">Your Food Preferences</ion-card-header>
+    <ion-card-content>
+      <p *ngIf="allergyLength == 0">You haven't specified any preferred foods yet.</p>
+      <ion-chip *ngFor = "let item of profileEntry.preference">
+        <ion-label>{{item}}</ion-label>
+      </ion-chip>
+    </ion-card-content>
+  </ion-card>
 
-		<ion-item>
-          <button ion-button (click)="editEntry(profileEntries.id)">Edit</button>
-        </ion-item>
+  <ion-card>
+    <ion-card-header color="primary">Your Preferred Price Range</ion-card-header>
+    <ion-card-content>
+        <p *ngIf="profileEntry.cost == null">You haven't set up your preferred price range yet.</p>
+        <p *ngIf="profileEntry.cost != null">{{ profileEntry.cost }} </p>
+    </ion-card-content>
+  </ion-card>
 
-
-  <ion-grid>
-    <h3>Allergy</h3>
-    <ion-row>
-      <ion-col><button full ion-button>Egg</button></ion-col>
-      <ion-col><button full ion-button>Fish</button></ion-col>
-      <ion-col><button full ion-button>Crustacean</button></ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col><button full ion-button>Nut</button></ion-col>
-      <ion-col><button full ion-button>Soy</button></ion-col>
-      <ion-col><button full ion-button>Milk</button></ion-col>
-    </ion-row>
-</ion-grid>
-
-
-  <ion-grid>
-    <h3>Allergy</h3>
-    <ion-row>
-      <ion-col><button full ion-button>Pizza</button></ion-col>
-      <ion-col><button full ion-button>Burger</button></ion-col>
-      <ion-col><button full ion-button>Salad</button></ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col><button full ion-button>Thai</button></ion-col>
-      <ion-col><button full ion-button>Asian</button></ion-col>
-      <ion-col><button full ion-button>Chinese</button></ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col><button full ion-button>Mexican</button></ion-col>
-      <ion-col><button full ion-button>Indian</button></ion-col>
-      <ion-col><button full ion-button>Korean</button></ion-col>
-    </ion-row>
-
-</ion-grid>
-
-		<ion-item>
-			<ion-label stacked color="primary">Cost range</ion-label>
-			 {{profileEntry.cost}}
-
-			<ion-label stacked color="primary">Number of accompany</ion-label>
-			 {{profileEntry.accompany}}
-		</ion-item>
-
-		<ion-item>
-			<ion-label stacked color="primary">Introduction</ion-label>
-			<ion-label>
-			 {{profileEntry.intro}}
-			</ion-label>
-		</ion-item>
-
-
-	</div>
-
-
-
-
+  <ion-card>
+    <ion-card-header color="primary">Your Preferred Number of People</ion-card-header>
+    <ion-card-content>
+        <p *ngIf="profileEntry.people == null">You haven't set up your preferred number of people to have meal with yet.</p>
+        <p *ngIf="profileEntry.people != null">{{ profileEntry.people }} and below</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

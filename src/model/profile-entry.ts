@@ -4,10 +4,11 @@ export class ProfileEntry{
     pic: any;
     name: string[];
     location: string;
+    available: boolean;
     allergy: any[];
     preference: any[];
     cost: any;
-    accompany: any;
+    people: any;
     intro: string;
     eventsId: string[];
 }

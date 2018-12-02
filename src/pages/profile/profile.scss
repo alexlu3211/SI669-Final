@@ -1,3 +1,28 @@
 page-profile {
 
+	h1{
+		font-weight: 800 !important;
+	}
+
+	.avatar{
+		height: 80px !important;
+		width: 80px !important;
+	}
+
+	.avatar-item{
+		.item-inner{
+			border-bottom: none !important;
+		}
+	}
+
+	ion-card{
+		ion-card-header{
+			font-weight: 600 !important;
+		}
+	}
+
+	ion-chip{
+		margin-right: 10px !important;
+	}
+
 }
