@@ -11,26 +11,17 @@ import { ProfilePage } from '../pages/profile/profile';
 import { SchedulePage } from '../pages/schedule/schedule';
 import { TabsPage } from '../pages/tabs/tabs';
 
-<<<<<<< HEAD
-import { RestaurantListPageModule } from '../pages/restaurant-list/restaurant-list.module';
-import { ProfileEditPageModule } from '../pages/profile-edit/profile-edit.module';
-=======
+
 import { LoginPage } from '../pages/login/login';
 
 import { RestaurantListPageModule } from '../pages/restaurant-list/restaurant-list.module';
 import { ProfileEditPageModule } from '../pages/profile-edit/profile-edit.module';
 import { SignupPageModule } from '../pages/signup/signup.module';
->>>>>>> refs/remotes/origin/master
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera } from '@ionic-native/camera';
-<<<<<<< HEAD
-=======
 
-import { RestaurantDataProvider } from '../providers/restaurant-data/restaurant-data';
-import { ProfileDataProvider } from '../providers/profile-data/profile-data';
->>>>>>> refs/remotes/origin/master
 import { DataProvider } from '../providers/data/data';
 
 
@@ -41,12 +32,9 @@ import { DataProvider } from '../providers/data/data';
     PeoplePage,
     ProfilePage,
     SchedulePage,
-<<<<<<< HEAD
-    TabsPage
-=======
     TabsPage,
     LoginPage
->>>>>>> refs/remotes/origin/master
+
   ],
   imports: [
     BrowserModule,
@@ -61,12 +49,10 @@ import { DataProvider } from '../providers/data/data';
       pageTransition: 'ios'
     }),
     RestaurantListPageModule,
-<<<<<<< HEAD
-    ProfileEditPageModule
-=======
+
     ProfileEditPageModule,
     SignupPageModule
->>>>>>> refs/remotes/origin/master
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -75,23 +61,16 @@ import { DataProvider } from '../providers/data/data';
     PeoplePage,
     ProfilePage,
     SchedulePage,
-<<<<<<< HEAD
-    TabsPage
-=======
+
     TabsPage,
     LoginPage
->>>>>>> refs/remotes/origin/master
+
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-<<<<<<< HEAD
-=======
-    RestaurantDataProvider,
-    ProfileDataProvider,
->>>>>>> refs/remotes/origin/master
     DataProvider
   ]
 })

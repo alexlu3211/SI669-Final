@@ -16,11 +16,8 @@ const SPINNER_IMAGE: string = "/assets/imgs/spinner.gif";
 })
 export class ProfileEditPage {
 
-<<<<<<< HEAD
 	private username: string;
 	private profileEntry: ProfileEntry;
-=======
->>>>>>> refs/remotes/origin/master
 
 	private entryTitle: string;
 	private entryText: string;
@@ -33,7 +30,7 @@ export class ProfileEditPage {
 				private camera: Camera) {
 
 		this.username = this.navParams.get("username");
-		this.profileEntry = this.navParams.get("profileEntry");s
+		this.profileEntry = this.navParams.get("profileEntry");
 
 
 		// if (entryID === undefined) {

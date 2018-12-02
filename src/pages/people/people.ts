@@ -1,20 +1,9 @@
 import { Component } from '@angular/core';
-<<<<<<< HEAD
-import { NavController, NavParams } from 'ionic-angular';
-import { ProfileEntry } from '../../model/profile-entry';
-import { DataProvider } from '../../providers/data/data';
-=======
+
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { DataProvider } from '../../providers/data/data';
 import { ProfileEntry } from '../../model/profile-entry';
 
-/**
- * Generated class for the PeoplePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
->>>>>>> refs/remotes/origin/master
 
 @Component({
   selector: 'page-people',
@@ -22,17 +11,6 @@ import { ProfileEntry } from '../../model/profile-entry';
 })
 export class PeoplePage {
 
-<<<<<<< HEAD
-  profileEntries: ProfileEntry[] = [];
-
-  constructor(public navCtrl: NavController, 
-              public navParams: NavParams, 
-              public dataProvider: DataProvider) {
-
-    this.dataProvider.getPeopleObservable().subscribe(update => {
-      this.profileEntries = dataProvider.getProfileEntries();
-      console.log(this.profileEntries);
-=======
   username: string = '';
   profileEntry: ProfileEntry[] = [];
 
@@ -46,13 +24,10 @@ export class PeoplePage {
     this.dataProvider.getProfileObservable().subscribe(update => {
       this.profileEntry = dataProvider.getProfileEntries();
       console.log("people page", this.profileEntry);
->>>>>>> refs/remotes/origin/master
     })
 
   }
 
-<<<<<<< HEAD
-=======
   private setupschedule(){
       let alert = this.alertCtrl.create({
       title: "Do you want to eat with this user?",
@@ -104,8 +79,6 @@ export class PeoplePage {
     alert.present();    
   }
 
-
->>>>>>> refs/remotes/origin/master
   ionViewDidLoad() {
     console.log('ionViewDidLoad PeoplePage');
   }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import { RestaurantDataProvider } from '../../providers/restaurant-data/restaurant-data';
+import { DataProvider } from '../../providers/data/data';
+
 import { LoginPage } from '../login/login';
 
 import { ProfileEntry } from '../../model/profile-entry';
@@ -27,7 +28,10 @@ export class SignupPage {
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public restaurantDataProvider: RestaurantDataProvider, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              public dataProvider: DataProvider, 
+              private alertCtrl: AlertController) {
     // this.restaurantDataProvider.getObservable().subscribe(update => {
     //   this.profileEntries = restaurantDataProvider.getEntries();
     //   console.log(this.profileEntries);
