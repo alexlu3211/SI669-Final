@@ -1,54 +1,56 @@
-[
-	{
-		"id": "event001",
-		"restaurantId": "putshCFiTdP7LwNDVVILTQ",
-		"date": 1543772035895,
-		"hostId": "test1",
-		"participantsId": [
-			"test2",
-			"test3"
-		]
-	},
+{
+	"events": [
+		{
+			"id": "event001",
+			"restaurantId": "restaurant001",
+			"date": 1543772035895,
+			"hostId": "user001",
+			"participantsId": [
+				"user002",
+				"user003"
+			]
+		},
 
-	{
-		"id": "event002",
-		"restaurantId": "3r_kPEIETjPZtXpSeVnpVQ",
-		"date": 1543772035895,
-		"hostId": "test3",
-		"participantsId": [
-			"test1",
-			"test4"
-		]
-	},
+		{
+			"id": "event002",
+			"restaurantId": "restaurant002",
+			"date": 1543772035895,
+			"hostId": "user003",
+			"participantsId": [
+				"user001",
+				"user004"
+			]
+		},
 
-	{
-		"id": "event003",
-		"restaurantId": "putshCFiTdP7LwNDVVILTQ",
-		"date": 1543772035895,
-		"hostId": "test2",
-		"participantsId": [
-			"test1",
-			"test4"
-		]
-	},
+		{
+			"id": "event003",
+			"restaurantId": "restaurant001",
+			"date": 1543772035895,
+			"hostId": "user002",
+			"participantsId": [
+				"user001",
+				"user004"
+			]
+		},
 
-	{
-		"id": "event004",
-		"restaurantId": "kqTMas0K148Qd-hfGbyEkw",
-		"date": 1543772035895,
-		"hostId": "test2",
-		"participantsId": [
-			"test3"
-		]
-	},
+		{
+			"id": "event004",
+			"restaurantId": "restaurant003",
+			"date": 1543772035895,
+			"hostId": "user002",
+			"participantsId": [
+				"user003"
+			]
+		},
 
-	{
-		"id": "event005",
-		"restaurantId": "putshCFiTdP7LwNDVVILTQ",
-		"date": 1543772035895,
-		"hostId": "test4",
-		"participantsId": [
-		]
-	}
+		{
+			"id": "event005",
+			"restaurantId": "restaurant002",
+			"date": 1543772035895,
+			"hostId": "user004",
+			"participantsId": [
+			]
+		}
 
-]
+	]
+}

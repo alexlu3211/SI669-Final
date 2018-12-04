@@ -33,7 +33,7 @@ export class ProfilePage {
     this.profileEntry = new ProfileEntry();
 
 
-    this.dataProvider.loadDummyProfileEntries();
+    this.dataProvider.loadProfileEntries();
     this.dataProvider.getProfileObservable().subscribe(update => {
       this.profileEntry = dataProvider.getProfileByUsername(this.username);
 

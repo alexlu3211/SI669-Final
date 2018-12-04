@@ -1,11 +1,12 @@
 export class RestaurantEntry {
-	id: string;
-	alia: string;
-	name: string;
-	image_url: string;
-	is_closed: boolean;
-	url: string;
-	review_count: number;
+    id: string;
+    alias: string;
+    name: string;
+    image_url: string;
+    is_closed: boolean;
+    url: string;
+    eventsId: string[];
+    review_count: number;
     categories: any[];
     rating: number;
     coordinates: any;

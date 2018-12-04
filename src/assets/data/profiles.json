@@ -1,8 +1,8 @@
 {
 	"profiles": [
 		{
-			"username": "test1",
-		    "password": "test1",
+			"username": "user001",
+		    "password": "user001",
 		    "pic": "https://randomuser.me/api/portraits/men/3.jpg",
 		    "name": [
 		    	"Tim",
@@ -22,8 +22,8 @@
 		},
 
 		{
-			"username": "test2",
-		    "password": "test2",
+			"username": "user002",
+		    "password": "user002",
 		    "pic": "https://randomuser.me/api/portraits/men/32.jpg",
 		    "name": [
 		    	"Paul",
@@ -44,8 +44,8 @@
 		},
 
 		{
-			"username": "test3",
-		    "password": "test3",
+			"username": "user003",
+		    "password": "user003",
 		    "pic": "https://randomuser.me/api/portraits/women/36.jpg",
 		    "name": [
 		    	"Dominique",
@@ -66,8 +66,8 @@
 		},
 
 		{
-			"username": "test4",
-		    "password": "test4",
+			"username": "user004",
+		    "password": "user004",
 		    "pic": "https://randomuser.me/api/portraits/women/8.jpg",
 		    "name": [
 		    	"May",

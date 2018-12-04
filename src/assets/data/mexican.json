@@ -1,0 +1,845 @@
+{
+    "restaurants": [
+        {
+            "id": "restaurant301",
+            "alias": "isalita-ann-arbor",
+            "name": "Isalita",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/Kax_19qwZS5tAHhxs5WUsQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/isalita-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 442,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 42.2794618,
+                "longitude": -83.7444065
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "341 E Liberty St",
+                "address2": "Ste 2",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48104",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "341 E Liberty St",
+                    "Ste 2",
+                    "Ann Arbor, MI 48104"
+                ]
+            },
+            "phone": "+17342137400",
+            "display_phone": "(734) 213-7400",
+            "distance": 398.84098999283776
+        },
+        {
+            "id": "restaurant302",
+            "alias": "chelas-ann-arbor",
+            "name": "Chela's",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/qjDLq3n0EKWIN-_LNLiwBQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/chelas-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 296,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                },
+                {
+                    "alias": "gluten_free",
+                    "title": "Gluten-Free"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 42.2736697,
+                "longitude": -83.7797882
+            },
+            "transactions": [
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "693 S Maple Rd",
+                "address2": "",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48103",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "693 S Maple Rd",
+                    "Ann Arbor, MI 48103"
+                ]
+            },
+            "phone": "+17343326055",
+            "display_phone": "(734) 332-6055",
+            "distance": 3153.618741705428
+        },
+        {
+            "id": "restaurant303",
+            "alias": "tmaz-taqueria-ann-arbor",
+            "name": "Tmaz Taqueria",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/fBOIBjDCj2KUQq6Ijpe88Q/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/tmaz-taqueria-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 377,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 42.2449934,
+                "longitude": -83.6965964
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "3182 Packard St",
+                "address2": "",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48108",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "3182 Packard St",
+                    "Ann Arbor, MI 48108"
+                ]
+            },
+            "phone": "+17344776089",
+            "display_phone": "(734) 477-6089",
+            "distance": 5139.478230529409
+        },
+        {
+            "id": "restaurant304",
+            "alias": "la-taqueria-ann-arbor-ann-arbor",
+            "name": "La Taqueria Ann Arbor",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/kYcWmT8ZMv6V-B52GGGJ1w/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/la-taqueria-ann-arbor-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 54,
+            "categories": [
+                {
+                    "alias": "tacos",
+                    "title": "Tacos"
+                },
+                {
+                    "alias": "latin",
+                    "title": "Latin American"
+                },
+                {
+                    "alias": "asianfusion",
+                    "title": "Asian Fusion"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 42.2794213,
+                "longitude": -83.7483554
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "106 E Liberty St",
+                "address2": "",
+                "address3": null,
+                "city": "Ann Arbor",
+                "zip_code": "48104",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "106 E Liberty St",
+                    "Ann Arbor, MI 48104"
+                ]
+            },
+            "phone": "+17343696922",
+            "display_phone": "(734) 369-6922",
+            "distance": 644.2217099025648
+        },
+        {
+            "id": "restaurant305",
+            "alias": "chelas-ann-arbor-3",
+            "name": "Chela's",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/1sV60AXHdBGaJKXpQthsVQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/chelas-ann-arbor-3?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 65,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                },
+                {
+                    "alias": "breakfast_brunch",
+                    "title": "Breakfast & Brunch"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 42.27919,
+                "longitude": -83.74589
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "307 S 5th Ave",
+                "address2": "",
+                "address3": null,
+                "city": "Ann Arbor",
+                "zip_code": "48104",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "307 S 5th Ave",
+                    "Ann Arbor, MI 48104"
+                ]
+            },
+            "phone": "+17347807078",
+            "display_phone": "(734) 780-7078",
+            "distance": 470.25637134176316
+        },
+        {
+            "id": "restaurant306",
+            "alias": "mi-compadre-ann-arbor",
+            "name": "Mi Compadre",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/tIchL-iyy7kOvzqs7c7Hiw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/mi-compadre-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 80,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 42.2564726608719,
+                "longitude": -83.7262933328748
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "2111 Packard St",
+                "address2": "",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48104",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "2111 Packard St",
+                    "Ann Arbor, MI 48104"
+                ]
+            },
+            "phone": "+17346043868",
+            "display_phone": "(734) 604-3868",
+            "distance": 2568.2776824407324
+        },
+        {
+            "id": "restaurant307",
+            "alias": "cosa-sabrosa-ann-arbor",
+            "name": "Cosa Sabrosa",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/2pPk8dbsahhtX0-G5BiCZg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/cosa-sabrosa-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 6,
+            "categories": [
+                {
+                    "alias": "foodtrucks",
+                    "title": "Food Trucks"
+                },
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                },
+                {
+                    "alias": "latin",
+                    "title": "Latin American"
+                }
+            ],
+            "rating": 5,
+            "coordinates": {
+                "latitude": 42.27199,
+                "longitude": -83.77442
+            },
+            "transactions": [],
+            "location": {
+                "address1": "2070 W Stadium Blvd",
+                "address2": "",
+                "address3": null,
+                "city": "Ann Arbor",
+                "zip_code": "48109",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "2070 W Stadium Blvd",
+                    "Ann Arbor, MI 48109"
+                ]
+            },
+            "phone": "+17346782620",
+            "display_phone": "(734) 678-2620",
+            "distance": 2799.3663466876656
+        },
+        {
+            "id": "restaurant308",
+            "alias": "cantina-ann-arbor",
+            "name": "Cantina",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/W4c3fMpwQafXuVVq2RsDVA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/cantina-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 75,
+            "categories": [
+                {
+                    "alias": "bars",
+                    "title": "Bars"
+                },
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                },
+                {
+                    "alias": "tapasmallplates",
+                    "title": "Tapas/Small Plates"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 42.27479,
+                "longitude": -83.73483
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "1140 S University Ave",
+                "address2": null,
+                "address3": null,
+                "city": "Ann Arbor",
+                "zip_code": "48104",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "1140 S University Ave",
+                    "Ann Arbor, MI 48104"
+                ]
+            },
+            "phone": "+17342223715",
+            "display_phone": "(734) 222-3715",
+            "distance": 572.659064215903
+        },
+        {
+            "id": "restaurant309",
+            "alias": "maìz-mexican-cantina-ypsilanti-2",
+            "name": "Maìz Mexican Cantina",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/XF4fs7_1_PXCfTYPb-OZzA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/ma%C3%ACz-mexican-cantina-ypsilanti-2?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 417,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 42.24572,
+                "longitude": -83.60967
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "36 E Cross St",
+                "address2": "",
+                "address3": "",
+                "city": "Ypsilanti",
+                "zip_code": "48198",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "36 E Cross St",
+                    "Ypsilanti, MI 48198"
+                ]
+            },
+            "phone": "+17343406010",
+            "display_phone": "(734) 340-6010",
+            "distance": 11354.855952878235
+        },
+        {
+            "id": "restaurant310",
+            "alias": "prickly-pear-southwest-cafe-ann-arbor",
+            "name": "Prickly Pear Southwest Cafe",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/VgYLWwTccCqhl1rzUdC8Sg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/prickly-pear-southwest-cafe-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 240,
+            "categories": [
+                {
+                    "alias": "tex-mex",
+                    "title": "Tex-Mex"
+                },
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "rating": 3.5,
+            "coordinates": {
+                "latitude": 42.2786199,
+                "longitude": -83.74903
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "328 S Main St",
+                "address2": "",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48104",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "328 S Main St",
+                    "Ann Arbor, MI 48104"
+                ]
+            },
+            "phone": "+17349300047",
+            "display_phone": "(734) 930-0047",
+            "distance": 667.9558229133401
+        },
+        {
+            "id": "restaurant311",
+            "alias": "minys-mexican-restaurant-ypsilanti",
+            "name": "Miny's Mexican Restaurant",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/tk4h9XuCD7Z59Xf1zdEC6w/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/minys-mexican-restaurant-ypsilanti?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 50,
+            "categories": [
+                {
+                    "alias": "tacos",
+                    "title": "Tacos"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 42.25061,
+                "longitude": -83.65686
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "2866 Washtenaw Rd",
+                "address2": null,
+                "address3": "",
+                "city": "Ypsilanti",
+                "zip_code": "48197",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "2866 Washtenaw Rd",
+                    "Ypsilanti, MI 48197"
+                ]
+            },
+            "phone": "+17344340857",
+            "display_phone": "(734) 434-0857",
+            "distance": 7566.253231467476
+        },
+        {
+            "id": "restaurant312",
+            "alias": "dolores-ypsilanti-4",
+            "name": "Dolores",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/oIQ_bxORawQ1hzGtgzTJSg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/dolores-ypsilanti-4?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 48,
+            "categories": [
+                {
+                    "alias": "tacos",
+                    "title": "Tacos"
+                },
+                {
+                    "alias": "cocktailbars",
+                    "title": "Cocktail Bars"
+                }
+            ],
+            "rating": 4,
+            "coordinates": {
+                "latitude": 42.24068,
+                "longitude": -83.61487
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "6 S Washington St",
+                "address2": "",
+                "address3": null,
+                "city": "Ypsilanti",
+                "zip_code": "48197",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "6 S Washington St",
+                    "Ypsilanti, MI 48197"
+                ]
+            },
+            "phone": "+17349049402",
+            "display_phone": "(734) 904-9402",
+            "distance": 11145.490667346723
+        },
+        {
+            "id": "restaurant313",
+            "alias": "btb-burrito-ann-arbor-3",
+            "name": "BTB Burrito",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/7b3TaYpvRkfHPiRLMGw6-Q/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/btb-burrito-ann-arbor-3?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 197,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "rating": 3.5,
+            "coordinates": {
+                "latitude": 42.27155,
+                "longitude": -83.74084
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "810 S State St",
+                "address2": null,
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48104",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "810 S State St",
+                    "Ann Arbor, MI 48104"
+                ]
+            },
+            "phone": "+17342224822",
+            "display_phone": "(734) 222-4822",
+            "distance": 578.7273315487207
+        },
+        {
+            "id": "restaurant314",
+            "alias": "la-torre-taqueria-ypsilanti",
+            "name": "La Torre Taqueria",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/AXoXUDP50yh2BVDvrCQryw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/la-torre-taqueria-ypsilanti?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 115,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 42.2471827,
+                "longitude": -83.637452
+            },
+            "transactions": [],
+            "price": "$",
+            "location": {
+                "address1": "1525 Washtenaw Ave",
+                "address2": "",
+                "address3": "",
+                "city": "Ypsilanti",
+                "zip_code": "48197",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "1525 Washtenaw Ave",
+                    "Ypsilanti, MI 48197"
+                ]
+            },
+            "phone": "+17349057220",
+            "display_phone": "(734) 905-7220",
+            "distance": 9113.818138072098
+        },
+        {
+            "id": "restaurant315",
+            "alias": "tios-restaurant-ann-arbor-2",
+            "name": "Tio's Restaurant",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/KZA2Mt5ErOPMRfvqyBZoKQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/tios-restaurant-ann-arbor-2?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 250,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "rating": 3,
+            "coordinates": {
+                "latitude": 42.2794575244188,
+                "longitude": -83.7438514083624
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "401 E Liberty St",
+                "address2": "",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48104",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "401 E Liberty St",
+                    "Ann Arbor, MI 48104"
+                ]
+            },
+            "phone": "+17347616650",
+            "display_phone": "(734) 761-6650",
+            "distance": 369.04139999854846
+        },
+        {
+            "id": "restaurant316",
+            "alias": "agave-tequila-ann-arbor",
+            "name": "Agave Tequila",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/9-Ogq5sfmYYrN6-NU3TzjA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/agave-tequila-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 209,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                },
+                {
+                    "alias": "latin",
+                    "title": "Latin American"
+                },
+                {
+                    "alias": "bars",
+                    "title": "Bars"
+                }
+            ],
+            "rating": 3,
+            "coordinates": {
+                "latitude": 42.28281,
+                "longitude": -83.74881
+            },
+            "transactions": [
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "211 N Main St",
+                "address2": "",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48104",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "211 N Main St",
+                    "Ann Arbor, MI 48104"
+                ]
+            },
+            "phone": "+17342147775",
+            "display_phone": "(734) 214-7775",
+            "distance": 909.4058790638645
+        },
+        {
+            "id": "restaurant317",
+            "alias": "don-juan-mexican-bar-and-grill-ann-arbor",
+            "name": "Don Juan Mexican Bar & Grill",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/2CsANFhrLtend2CD9kK0Fg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/don-juan-mexican-bar-and-grill-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 75,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "rating": 3.5,
+            "coordinates": {
+                "latitude": 42.272736,
+                "longitude": -83.775584
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "2135 W Stadium Blvd",
+                "address2": "",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48103",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "2135 W Stadium Blvd",
+                    "Ann Arbor, MI 48103"
+                ]
+            },
+            "phone": "+17347691650",
+            "display_phone": "(734) 769-1650",
+            "distance": 2861.926830818194
+        },
+        {
+            "id": "restaurant318",
+            "alias": "los-amigos-ann-arbor-ann-arbor-2",
+            "name": "Los Amigos Ann Arbor",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/7M-WACCpA6pQ_0FFQOG7Bw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/los-amigos-ann-arbor-ann-arbor-2?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 81,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "rating": 3.5,
+            "coordinates": {
+                "latitude": 42.239958,
+                "longitude": -83.740742
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "625 Hilton Blvd",
+                "address2": "",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48108",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "625 Hilton Blvd",
+                    "Ann Arbor, MI 48108"
+                ]
+            },
+            "phone": "+17343270500",
+            "display_phone": "(734) 327-0500",
+            "distance": 4091.7898731619034
+        },
+        {
+            "id": "restaurant319",
+            "alias": "aut-bar-ann-arbor",
+            "name": "Aut Bar",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/EpXWl3eVDMy2CzjgqsL_cQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/aut-bar-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 160,
+            "categories": [
+                {
+                    "alias": "gaybars",
+                    "title": "Gay Bars"
+                },
+                {
+                    "alias": "breakfast_brunch",
+                    "title": "Breakfast & Brunch"
+                },
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "rating": 3.5,
+            "coordinates": {
+                "latitude": 42.28378,
+                "longitude": -83.74742
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "315 Braun Ct",
+                "address2": "",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48104",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "315 Braun Ct",
+                    "Ann Arbor, MI 48104"
+                ]
+            },
+            "phone": "+17349943677",
+            "display_phone": "(734) 994-3677",
+            "distance": 934.3495763240535
+        },
+        {
+            "id": "restaurant320",
+            "alias": "taco-king-ann-arbor",
+            "name": "Taco King",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/1mYqfZvdLprDYUI9EET1AQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/taco-king-ann-arbor?adjust_creative=r7kX4wD-m44LJurnScOgwQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=r7kX4wD-m44LJurnScOgwQ",
+            "review_count": 114,
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "rating": 3.5,
+            "coordinates": {
+                "latitude": 42.2737399,
+                "longitude": -83.7771999
+            },
+            "transactions": [
+                "delivery",
+                "pickup"
+            ],
+            "price": "$",
+            "location": {
+                "address1": "2231 W Liberty St",
+                "address2": "",
+                "address3": "",
+                "city": "Ann Arbor",
+                "zip_code": "48103",
+                "country": "US",
+                "state": "MI",
+                "display_address": [
+                    "2231 W Liberty St",
+                    "Ann Arbor, MI 48103"
+                ]
+            },
+            "phone": "+17345855796",
+            "display_phone": "(734) 585-5796",
+            "distance": 2969.914830363481
+        }
+    ]
+}

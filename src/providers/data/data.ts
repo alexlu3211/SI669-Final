@@ -24,9 +24,16 @@ export class DataProvider {
 	private db: any;
 
 	private profileEntries: ProfileEntry[] = [];
-	private restaurantEntries: RestaurantEntry[] = [];
+	private restaurantEntries: {"korean": RestaurantEntry[], 
+								"chinese": RestaurantEntry[], 
+								"mexican": RestaurantEntry[], 
+								"indian": RestaurantEntry[]} = {
+								"korean": [], 
+								"chinese": [], 
+								"mexican": [], 
+								"indian": []}
 	private eventEntries: EventEntry[] = [];
-	private username: string = "test1";
+	private username: string = "user001";
 
 	private eventObserver: any;
 	private eventObservable: Observable<EventEntry[]>;
@@ -62,55 +69,64 @@ export class DataProvider {
 		this.peopleObservable = Observable.create((observer) => {
 			this.peopleObserver = observer;
 		})
-
-		// let dataRef = this.db.ref("/profiles");
-
-		// dataRef.on("value", snapshot => {
-
-		// 	this.profileEntries = [];
-			
-		// 	snapshot.forEach(childSnapshot => {
-		// 		let entry = {
-		// 			username: childSnapshot.val().username,
-		// 			password: childSnapshot.val().password,
-		// 			pic: childSnapshot.val().pic,
-		// 			name: childSnapshot.val().name,
-		// 			location: childSnapshot.val().location,
-		// 			allergy: childSnapshot.val().allergy,
-		// 			preference: childSnapshot.val().preference,
-		// 			cost: childSnapshot.val().cost,
-		// 			accompany: childSnapshot.val().accompany,
-		// 			intro: childSnapshot.val().intro,
-		// 			eventsId: childSnapshot.val().eventsId,
-		// 		};
-		// 		this.profileEntries.push(entry);
-		// 		this.notifyProfileSubscribers();
-		// 		console.log(this.profileEntries);
-		// 	})
-		// })
-
-		// this.loadDummyProfileEntries()
-		// this.loadDummyRestaurantEntries();
 	}
 
 	// -------------------------- Restaurant functions -------------------------
 
-	public loadDummyRestaurantEntries(){
-		this.http.get("../../assets/data/korean.json").subscribe(data => {
-			for (let restaurant of data['restaurants']){
-				this.restaurantEntries.push(restaurant)
-			}
-			this.notifyRestaurantSubscribers();
-			console.log(this.restaurantEntries);
-		});
+	// public loadDummyRestaurantEntries(){
+	// 	this.http.get("../../assets/data/korean.json").subscribe(data => {
+	// 		for (let restaurant of data['restaurants']){
+	// 			this.restaurantEntries.push(restaurant)
+	// 		}
+	// 		this.notifyRestaurantSubscribers();
+	// 		console.log(this.restaurantEntries);
+	// 	});
+	// }
+
+	public loadRestaurantEntries(){
+		this.loadRestaurantEntriesCuisine("korean");
+		this.loadRestaurantEntriesCuisine("chinese");
+		this.loadRestaurantEntriesCuisine("mexican");
+		this.loadRestaurantEntriesCuisine("indian");
+	}
+
+	public loadRestaurantEntriesCuisine(cuisine: string){
+		let dataRef = this.db.ref("/restaurants/" + cuisine);
+
+		dataRef.on("value", snapshot => {
+			this.restaurantEntries[cuisine] = [];
+			snapshot.forEach(childSnapshot => {
+				let entry = {
+					id: childSnapshot.val().id,
+					alias: childSnapshot.val().alia,
+					name: childSnapshot.val().name,
+					image_url: childSnapshot.val().image_url,
+					is_closed: childSnapshot.val().is_closed,
+					url: childSnapshot.val().url,
+					eventsId: childSnapshot.val().eventsId,
+					review_count: childSnapshot.val().review_count,
+					categories: childSnapshot.val().categories,
+					rating: childSnapshot.val().rating,
+					coordinates: childSnapshot.val().coordinates,
+					transactions: childSnapshot.val().transactions,
+					price: childSnapshot.val().price,
+					location: childSnapshot.val().location,
+					phone: childSnapshot.val().phone,
+					display_phone: childSnapshot.val().display_phone,
+					distance: childSnapshot.val().distance
+				};
+				this.restaurantEntries[cuisine].push(entry);
+				this.notifyRestaurantSubscribers();
+			})
+		})		
 	}
 
 	public getRestaurantObservable(): Observable<RestaurantEntry[]> {
 		return this.restaurantObservable; 
 	}
 
-	public getRestaurantEntries(): RestaurantEntry[]{
-		return JSON.parse(JSON.stringify(this.restaurantEntries));
+	public getRestaurantEntries(cuisine: string): RestaurantEntry[]{
+		return JSON.parse(JSON.stringify(this.restaurantEntries[cuisine]));
 	}
 
 	public notifyRestaurantSubscribers(): void {
@@ -123,6 +139,42 @@ export class DataProvider {
 		return this.peopleObservable;
 	}
 
+	// --------------------------- Event functions -----------------------------
+
+	public loadEventEntries(){
+		let dataRef = this.db.ref("/events");
+
+		dataRef.on("value", snapshot => {
+			this.eventEntries = [];
+			snapshot.forEach(childSnapshot => {
+				let entry = {
+					id: 		    childSnapshot.val().id,
+					restaurantId:   childSnapshot.val().restaurantId,
+					date: 		    childSnapshot.val().date,
+					hostId: 	    childSnapshot.val().hostId,
+					participantsId: childSnapshot.val().participantsId
+				};
+				this.eventEntries.push(entry);
+			});
+			this.notifyEventSubscribers();
+			console.log("Yas", this.eventEntries);
+		})		
+	}
+
+	public getEventEntries():ProfileEntry[] {  
+		let entriesClone = JSON.parse(JSON.stringify(this.eventEntries));
+		return entriesClone;
+	}
+
+	public getEventObservable(): Observable<any> {
+		return this.eventObservable; 
+	}
+
+	public notifyEventSubscribers(){
+		this.eventObserver.next(undefined);
+	}
+
+
 	// --------------------------- Profile functions ---------------------------
 
 	public loadDummyProfileEntries(){
@@ -131,8 +183,33 @@ export class DataProvider {
 				this.profileEntries.push(profile)
 			}
 			this.notifyProfileSubscribers();
-			console.log(this.profileEntries);
 		});
+	}
+
+	public loadProfileEntries(){
+		let dataRef = this.db.ref("/profiles");
+
+		dataRef.on("value", snapshot => {
+			this.profileEntries = [];
+			snapshot.forEach(childSnapshot => {
+				let entry = {
+					username:   childSnapshot.val().username,
+					password:   childSnapshot.val().password,
+					pic: 	    childSnapshot.val().pic,
+					name: 	    childSnapshot.val().name,
+					location:   childSnapshot.val().location,
+					available:  childSnapshot.val().available,
+					allergy:    childSnapshot.val().allergy,
+					preference: childSnapshot.val().preference,
+					cost: 	    childSnapshot.val().cost,
+					people: 	childSnapshot.val().people,
+					intro: 		childSnapshot.val().intro,
+					eventsId: 	childSnapshot.val().eventsId,
+				};
+				this.profileEntries.push(entry);
+			});
+			this.notifyProfileSubscribers();
+		})
 	}
 
 	public getUserName(){
