@@ -4,4 +4,5 @@ export class EventEntry{
 	date: any;
 	hostId: string;
 	participantsId: string[];
+	memo: string;
 }

@@ -1,32 +1,59 @@
-<!--
-  Generated template for the RestaurantDetailPage page.
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Create your own schedule</ion-title>
+    <ion-title> Schedules </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding center text-center>
-	<!-- <h1 *ngFor="let profile of profileEntry"> {{profile.username}} </h1> -->
+<ion-content padding>
+	
+	<ion-card>
+		<div class="image-holder">
+			<img src="{{ restaurantEntry.image_url }}"/>
+		</div>
+		<ion-card-content>
+			<ion-card-title>
+			  {{ restaurantEntry.name }}
+			</ion-card-title>
+		</ion-card-content>
+	</ion-card>
 
-	<div class="image-holder">
-		<img src="{{restaurantEntry.image_url}}">
-	</div>
-	<ion-card-title> {{restaurantEntry.name}} </ion-card-title>
-	<p>{{restaurantEntry.price}} &middot; {{restaurantEntry.rating}} &#9733; </p>
-<!-- 
-<div *ngFor="let profile of profileEntry">
-	<img [src]="profile.pic">
-</div> -->
+	<h1 class="subtitle">{{ restaurantEntry.eventsId?.length }} events are upcoming</h1>
+
+	<ion-card *ngFor="let event of currentEventEntries">
+		<ion-card-content>
+			<ion-row>
+				<ion-col col-3>
+					<img class="host-picture" src="{{ dataProvider.getProfilePicByUsername(event.hostId) }}"/>
+				</ion-col>
+
+				<ion-col col-9>
+					<h2> {{ dataProvider.getProfileByUsername(event.hostId).name }}'s Event </h2>
+					<h3> <ion-icon name="alarm"></ion-icon> {{ event.date | date:'short'}} </h3>
+					<p> "{{ event.memo }}"</p>
+					
+					<p class="label-participants"> There are {{ event.participantsId?.length }} people in this event </p>
+					<ion-row>
+						<div class="guest-picture-container">
+						<img *ngFor="let participantId of event.participantsId"
+							 class="guest-picture" 
+							 src="{{ dataProvider.getProfilePicByUsername(participantId) }}" />
+						</div>
+					</ion-row>
+				</ion-col>
+			</ion-row>
+
+
+
+		</ion-card-content>
+
+	</ion-card>
+
 
 <!-- *ngFor="let entry of eventEntry" -->
-	<ion-card *ngFor="let entry of eventEntry">
+<!-- 	<ion-card *ngFor="let entry of eventEntry">
 		<ion-card-content>
 			<ion-grid>
 			  <ion-row>
@@ -43,6 +70,6 @@
 			</ion-grid>
 			<button ion-button (click)="joinSchedule(entry.hostId)">Join this party</button>
 		</ion-card-content>
-	</ion-card>
+	</ion-card> -->
 	<button ion-button (click)="createSchedule(restaurantEntry.name)">Make your own schedule</button>
 </ion-content>

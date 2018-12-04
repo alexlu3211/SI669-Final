@@ -73,21 +73,12 @@ export class DataProvider {
 
 	// -------------------------- Restaurant functions -------------------------
 
-	// public loadDummyRestaurantEntries(){
-	// 	this.http.get("../../assets/data/korean.json").subscribe(data => {
-	// 		for (let restaurant of data['restaurants']){
-	// 			this.restaurantEntries.push(restaurant)
-	// 		}
-	// 		this.notifyRestaurantSubscribers();
-	// 		console.log(this.restaurantEntries);
-	// 	});
-	// }
-
 	public loadRestaurantEntries(){
 		this.loadRestaurantEntriesCuisine("korean");
 		this.loadRestaurantEntriesCuisine("chinese");
 		this.loadRestaurantEntriesCuisine("mexican");
 		this.loadRestaurantEntriesCuisine("indian");
+		console.log(this.restaurantEntries);
 	}
 
 	public loadRestaurantEntriesCuisine(cuisine: string){
@@ -126,7 +117,7 @@ export class DataProvider {
 	}
 
 	public getRestaurantEntries(cuisine: string): RestaurantEntry[]{
-		return JSON.parse(JSON.stringify(this.restaurantEntries[cuisine]));
+		return this.restaurantEntries[cuisine];
 	}
 
 	public notifyRestaurantSubscribers(): void {
@@ -152,18 +143,17 @@ export class DataProvider {
 					restaurantId:   childSnapshot.val().restaurantId,
 					date: 		    childSnapshot.val().date,
 					hostId: 	    childSnapshot.val().hostId,
-					participantsId: childSnapshot.val().participantsId
+					participantsId: childSnapshot.val().participantsId,
+					memo:           childSnapshot.val().memo
 				};
 				this.eventEntries.push(entry);
 			});
 			this.notifyEventSubscribers();
-			console.log("Yas", this.eventEntries);
 		})		
 	}
 
-	public getEventEntries():ProfileEntry[] {  
-		let entriesClone = JSON.parse(JSON.stringify(this.eventEntries));
-		return entriesClone;
+	public getEventEntries():EventEntry[] {  
+		return this.eventEntries;
 	}
 
 	public getEventObservable(): Observable<any> {
@@ -183,21 +173,7 @@ export class DataProvider {
 		return undefined;
 	}
 
-	public getHostId(){
-		return this.hostId;
-	}
-
-
 	// --------------------------- Profile functions ---------------------------
-
-	public loadDummyProfileEntries(){
-		this.http.get("../../assets/data/profiles.json").subscribe(data =>{
-			for (let profile of data['profiles']){
-				this.profileEntries.push(profile)
-			}
-			this.notifyProfileSubscribers();
-		});
-	}
 
 	public loadProfileEntries(){
 		let dataRef = this.db.ref("/profiles");
@@ -261,13 +237,24 @@ export class DataProvider {
 			eventsId: newEntry.eventsId
 		});
 
-		// this.notifyProfileSubscribers();
+		this.notifyProfileSubscribers();
 	}
 
 	public getProfileByUsername(username: string): ProfileEntry {
-		for (let e of this.profileEntries) {
-		  if (e.username === username) {
-		     return e;
+
+		for (let profile of this.profileEntries) {
+		  if (profile.username === username) {
+		     return profile;
+		  }
+		}
+		return undefined;
+	}
+
+	public getProfilePicByUsername(username: string): ProfileEntry {
+
+		for (let profile of this.profileEntries) {
+		  if (profile.username === username) {
+		     return profile.pic;
 		  }
 		}
 		return undefined;

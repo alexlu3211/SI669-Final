@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { DataProvider } from '../../providers/data/data';
@@ -14,7 +14,7 @@ const SPINNER_IMAGE: string = "/assets/imgs/spinner.gif";
   selector: 'page-profile',
   templateUrl: 'profile.html',
 })
-export class ProfilePage {
+export class ProfilePage implements OnInit{
 
   username: string = '';
   profileEntry: ProfileEntry;
@@ -33,7 +33,6 @@ export class ProfilePage {
     this.profileEntry = new ProfileEntry();
 
 
-    this.dataProvider.loadProfileEntries();
     this.dataProvider.getProfileObservable().subscribe(update => {
       this.profileEntry = dataProvider.getProfileByUsername(this.username);
 
@@ -41,6 +40,14 @@ export class ProfilePage {
       this.preferenceLength = this.profileEntry.preference.length;
 
     })
+  }
+
+  ngOnInit(){
+    this.dataProvider.loadProfileEntries();
+    this.profileEntry = this.dataProvider.getProfileByUsername(this.username);
+
+    this.allergyLength = this.profileEntry.allergy.length;
+    this.preferenceLength = this.profileEntry.preference.length;
   }
 
   private editEntry(entryID: number) {

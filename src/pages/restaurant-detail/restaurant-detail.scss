@@ -1,14 +1,67 @@
 page-restaurant-detail {
+
+	.subtitle{
+		font-size: 16px !important;
+		font-weight: 800 !important;
+		color: #e67e22;
+		padding-left: 10px;
+	}
+
+	ion-card{
+
 		.image-holder{
 			position: relative;
 			height: 200px !important;
 			overflow: hidden;
 		}
 
-	ion-card{
-
 		ion-card-title{
 			font-weight: 700 !important;
+		}
+
+		ion-card-content{
+			text-align: left;
+
+			.host-picture{
+				border-radius: 50%;
+			}
+
+			.guest-picture{
+				height: 40px; 
+				width: 40px;
+				border-radius: 50%;
+				margin-right: 5px;
+			}
+
+			.guest-picture-container{
+				display: flex;
+				flex-direction: row;
+				flex-wrap: nowrap;
+			}
+
+			h2{
+				font-weight: 600 !important;
+				color: #e67e22;
+			}
+
+			h3{
+				font-weight: 500 !important;
+			}
+
+			// p{
+			// 	color: black !important;
+			// }
+
+			ion-icon{
+				color: #e67e22;
+				font-size: 20px;
+			}
+
+			.label-participants{
+				margin-top: 10px;
+				color: #606060;
+				font-size: 12px;
+			}
 		}
 
 		ion-chip{

@@ -1,5 +1,13 @@
 * {
     font-family: 'Avenir';
+
+    .content-ios{
+		background-color: #f8f8f8 !important;
+	}
+
+	ion-card{
+		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15) !important;
+	}
 }
 
 ion-navbar, ion-title{

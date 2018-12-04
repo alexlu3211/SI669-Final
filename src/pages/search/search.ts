@@ -32,10 +32,9 @@ export class SearchPage {
       this.restaurantEntries.mexican = dataProvider.getRestaurantEntries("mexican");
       this.restaurantEntries.indian = dataProvider.getRestaurantEntries("indian");
     })
-  }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SearchPage');
+    console.log(this.restaurantEntries);
+
   }
 
   pushRestaurantListPage(cuisine: string) {

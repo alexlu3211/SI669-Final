@@ -43,6 +43,7 @@ import { DataProvider } from '../providers/data/data';
     HttpClientModule,
     IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp, {
+      mode: 'ios',
       backButtonText: '',
       iconMode: 'md',
       // modalEnter: 'modal-slide-in',

@@ -26,9 +26,9 @@ export class RestaurantSchedulePage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public dataProvider: DataProvider) {
 	this.name = this.navParams.get("name");
 	this.restaurantEntry = new RestaurantEntry();
-    this.dataProvider.loadDummyRestaurantEntries();
+    // this.dataProvider.loadDummyRestaurantEntries();
     this.dataProvider.getRestaurantObservable().subscribe(update => {
-      this.restaurantEntry = dataProvider.getRestaurantByUsername(this.name);
+      // this.restaurantEntry = dataProvider.getRestaurantByUsername(this.name);
     })
 
   }

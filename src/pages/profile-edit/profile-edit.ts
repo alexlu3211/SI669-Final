@@ -32,27 +32,6 @@ export class ProfileEditPage {
 		this.username = this.navParams.get("username");
 		this.profileEntry = this.navParams.get("profileEntry");
 
-
-		// if (entryID === undefined) {
-		// 	this.profileEntries = new ProfileEntry();
-		// 	this.profileEntries.username;
-		// 	this.profileEntries.pic = this.placeholderImage;
-		// 	this.profileEntries.password = "";
-		// 	this.profileEntries.name = [];
-		// 	this.profileEntries.location = "";
-		// 	this.profileEntries.allergy = [];
-		// 	this.profileEntries.preference = [];
-		// 	this.profileEntries.cost = "";
-		// 	this.profileEntries.accompany = "";
-		// 	this.profileEntries.intro = "";
-		// 	this.profileEntries.eventsId = []
-		// } else {
-		// 	this.profileEntries = this.dataProvider.getProfileByUsername(entryID);
-		// 	if (this.profileEntries.pic == null) 
-		// 		this.profileEntries.pic = this.placeholderImage
-		// }
-
-		// console.log("retrieved entry:", this.profileEntries);
 	}
 	
 	private saveEntry() {
