@@ -174,6 +174,19 @@ export class DataProvider {
 		this.eventObserver.next(undefined);
 	}
 
+	public getEventByUsername(hostId: string): EventEntry {
+		for (let e of this.eventEntries) {
+		  if (e.hostId === hostId) {
+		     return e;
+		  }
+		}
+		return undefined;
+	}
+
+	public getHostId(){
+		return this.hostId;
+	}
+
 
 	// --------------------------- Profile functions ---------------------------
 

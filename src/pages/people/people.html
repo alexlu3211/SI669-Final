@@ -10,20 +10,39 @@
 <ion-content padding>
 
 	<ion-item>
-	  <ion-label>Turn on the availiability</ion-label>
+	  <ion-label>Turn on the availability</ion-label>
 	  <ion-toggle [(ngModel)]="availability"></ion-toggle>
 	</ion-item>
+		<ion-card *ngIf="availability">
+			<ion-card-content class="col1">
+				<ion-grid>
+				  <ion-row>
+				    <ion-col class="col1">
+				    	<img [src]="myprofileEntry.pic">
+				    	<p>{{myprofileEntry.name}}</p>
+				    </ion-col>
+				    <ion-col class="col1">
+				    	<ion-icon ios="ios-remove-circle" md="md-remove-circle"></ion-icon> {{ myprofileEntry.allergy}}
+				        <ion-icon ios="ios-thumbs-up" md="md-thumbs-up"></ion-icon> {{myprofileEntry.preference}}
+				        <p>{{myprofileEntry.cost}}</p>
+				        <p>Number of accompany     {{myprofileEntry.accompany}}</p>
+				        <p>{{myprofileEntry.intro}}</p>
+				    </ion-col>
+				  </ion-row>
+				</ion-grid>
+			</ion-card-content>
+		</ion-card>
 
 	<ion-card *ngFor="let entry of profileEntry">
-		<ion-card-content (click)=setupschedule()>
+		<ion-card-content (click)=setupschedule(entry.username)>
 			
 			<ion-grid>
 			  <ion-row>
-			    <ion-col class="col1">
+			    <ion-col>
 			    	<img [src]="entry.pic">
 			    	<p>{{entry.name}}</p>
 			    </ion-col>
-			    <ion-col class="col2">
+			    <ion-col>
 			    	<ion-icon ios="ios-remove-circle" md="md-remove-circle"></ion-icon> {{entry.allergy}}
 			        <ion-icon ios="ios-thumbs-up" md="md-thumbs-up"></ion-icon> {{entry.preference}}
 			        <p>{{entry.cost}}</p>

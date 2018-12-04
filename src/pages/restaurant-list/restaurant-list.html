@@ -9,7 +9,7 @@
 
 <ion-content padding>
 
-	<ion-card *ngFor="let restaurant of restaurantEntries">
+	<ion-card *ngFor="let restaurant of restaurantEntries" (click)=goToDetail(restaurant)>
 		<div class="image-holder">
 			<img src="{{ restaurant.image_url }}"/>
 

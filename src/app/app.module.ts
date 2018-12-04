@@ -15,6 +15,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 
 import { RestaurantListPageModule } from '../pages/restaurant-list/restaurant-list.module';
+import { RestaurantDetailPageModule } from '../pages/restaurant-detail/restaurant-detail.module';
+import { RestaurantSchedulePageModule } from '../pages/restaurant-schedule/restaurant-schedule.module';
 import { ProfileEditPageModule } from '../pages/profile-edit/profile-edit.module';
 import { SignupPageModule } from '../pages/signup/signup.module';
 
@@ -49,7 +51,8 @@ import { DataProvider } from '../providers/data/data';
       pageTransition: 'ios'
     }),
     RestaurantListPageModule,
-
+    RestaurantDetailPageModule,
+    RestaurantSchedulePageModule,
     ProfileEditPageModule,
     SignupPageModule
 
