@@ -45,6 +45,7 @@ export class DataProvider {
 
 	public restaurantSubject: any;
 	public profileSubject:any;
+	public eventSubject: any;
 
 	constructor(public http: HttpClient) {
 		console.log('Hello DataProvider Provider');
@@ -52,17 +53,13 @@ export class DataProvider {
 		firebase.initializeApp(firebaseConfig);
 		this.db = firebase.database();
 
-
-		this.profileObservable = Observable.create((observer) => {
-			this.profileObserver = observer;
-		})
-
 		this.eventObservable = Observable.create((observer)=> {
 			this.eventObserver = observer;
 		})
 
 		this.restaurantSubject = new Subject<any>();
 		this.profileSubject = new Subject<any>();
+		this.eventSubject = new Subject<any>();
 	}
 
 	// -------------------------- Restaurant functions -------------------------
@@ -178,12 +175,9 @@ export class DataProvider {
 		return this.eventEntries;
 	}
 
-	public getEventObservable(): Observable<any> {
-		return this.eventObservable; 
-	}
 
 	public notifyEventSubscribers(){
-		this.eventObserver.next(undefined);
+		this.eventSubject.next(undefined);
 	}
 
 	public getEventByUsername(hostId: string): EventEntry {

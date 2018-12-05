@@ -37,7 +37,7 @@ export class RestaurantDetailPage {
       // console.log("current restaurant", dataProvider.getRestaurantById(this.cuisine, this.restaurantId));
     })
 
-    this.dataProvider.getEventObservable().subscribe(update => {
+    this.dataProvider.eventSubject.subscribe(update => {
       this.eventEntries = dataProvider.getEventEntries();
       this.currentEventEntries = [];
 
