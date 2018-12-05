@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { DataProvider } from '../../providers/data/data';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 
@@ -24,25 +24,83 @@ export class ProfileEditPage {
 	private placeholderImage = PLACEHOLDER_IMAGE;
 	private profileEntries: ProfileEntry;
 
+	newChip: string = ""
+
+
 	constructor(public navCtrl: NavController, 
 				public navParams: NavParams,
 				public dataProvider: DataProvider,
+				public alertCtrl: AlertController,
 				private camera: Camera) {
 
 		this.username = this.navParams.get("username");
 		this.profileEntry = this.navParams.get("profileEntry");
 
+		console.log(this.profileEntry);
+
+	}
+
+	addAllergyChip() {
+	  let alert = this.alertCtrl.create({
+	    title: 'Add New Allergy',
+	    inputs: [
+	      {
+	        name: 'newAllergy',
+	        placeholder: 'Description'
+	      }
+	    ],
+	    buttons: [
+	      {
+	        text: 'Cancel',
+	        role: 'cancel'
+	      },
+	      {
+	        text: 'Add',
+	        handler: data => {
+	        	this.profileEntry.allergy.push(data.newAllergy);
+	        }
+	      }
+	    ]
+	  });
+	  alert.present();
+	}
+
+	deleteAllergyChip(index: number){
+		this.profileEntry.allergy.splice(index, 1);
+	}
+
+	addPreferenceChip() {
+	  let alert = this.alertCtrl.create({
+	    title: 'Add New Food Preference',
+	    inputs: [
+	      {
+	        name: 'newPreference',
+	        placeholder: 'Description'
+	      }
+	    ],
+	    buttons: [
+	      {
+	        text: 'Cancel',
+	        role: 'cancel'
+	      },
+	      {
+	        text: 'Add',
+	        handler: data => {
+	        	this.profileEntry.preference.push(data.newPreference);
+	        }
+	      }
+	    ]
+	  });
+	  alert.present();
+	}
+
+	deletePreferenceChip(index: number){
+		this.profileEntry.preference.splice(index, 1);
 	}
 	
-	private saveEntry() {
-
-		if (this.profileEntries.username === "") { 
-			// this.dataProvider.addEntry(this.profileEntries);
-		} else {
-			// this.doCheckbox();
-			this.dataProvider.updateProfileEntry(this.profileEntries.username, this.profileEntries);
-		}
-		console.log(this.profileEntries.name)
+	private updateProfile() {
+		console.log("updating profile...");
+		this.dataProvider.updateProfile(this.profileEntry);
 		this.navCtrl.pop();
 	}
 

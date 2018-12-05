@@ -6,31 +6,42 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>restaurant-schedule</ion-title>
+    <ion-title>New Event</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding center text-center>
-	<div class="image-holder">
-		<img src="{{restaurantEntry.image_url}}">
-	</div>
-	<ion-card-title> {{restaurantEntry.name}} </ion-card-title>
-	<p>{{restaurantEntry.price}} &middot; {{restaurantEntry.rating}} &#9733; </p>
+<ion-content padding>
+
+	<!-- <h1 class="subtitle">Create your new event</h1> -->
 
 	<ion-list>
+
 		<ion-item>
-		  <ion-label>Date</ion-label>
-		  <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+			<ion-label color="primary" stacked>Event Name</ion-label>
+			<ion-input [(ngModel)]="event.name"></ion-input>
 		</ion-item>
 
-	<ion-item>
-	  <ion-label>Time</ion-label>
-	  <ion-datetime displayFormat="hh:mm a" [(ngModel)]="myTime"></ion-datetime>
-	</ion-item>
+		<ion-item>
+		  <ion-label color="primary" stacked>Date</ion-label>
+		  <ion-datetime displayFormat="MMM DD, YYYY" [(ngModel)]="event.date"></ion-datetime>
+		</ion-item>
+
+		<ion-item>
+		  <ion-label color="primary" stacked>Time</ion-label>
+		  <ion-datetime displayFormat="hh:mm a" [(ngModel)]="event.time"></ion-datetime>
+		</ion-item>
+
+		<ion-item>
+			<ion-label color="primary" stacked>Event Introduction</ion-label>
+			<ion-textarea [(ngModel)]="event.memo"></ion-textarea>
+		</ion-item>
 	</ion-list>
 
-
-		<button ion-button>Ok</button>
+	<ion-row>
+		<ion-col text-center>
+			<button ion-button round class="button-create" (click)="createEvent()" [disabled]="event.name=='' || event.memo=='' || event.date==null || event.time==null">CREATE</button>
+		</ion-col>
+	</ion-row>
 </ion-content>

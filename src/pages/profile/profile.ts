@@ -33,9 +33,9 @@ export class ProfilePage implements OnInit{
     this.profileEntry = new ProfileEntry();
 
 
-    this.dataProvider.getProfileObservable().subscribe(update => {
+    this.dataProvider.profileSubject.subscribe(update => {
       this.profileEntry = dataProvider.getProfileByUsername(this.username);
-
+ 
       this.allergyLength = this.profileEntry.allergy.length;
       this.preferenceLength = this.profileEntry.preference.length;
 
@@ -44,13 +44,9 @@ export class ProfilePage implements OnInit{
 
   ngOnInit(){
     this.dataProvider.loadProfileEntries();
-    this.profileEntry = this.dataProvider.getProfileByUsername(this.username);
-
-    this.allergyLength = this.profileEntry.allergy.length;
-    this.preferenceLength = this.profileEntry.preference.length;
   }
 
-  private editEntry(entryID: number) {
+  private editEntry() {
     this.navCtrl.push(ProfileEditPage, {
       "username": this.username,
       "profileEntry": this.profileEntry

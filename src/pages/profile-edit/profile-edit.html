@@ -1,110 +1,96 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>profile_edit</ion-title>
+    <ion-title>Edit Profile</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-<!-- When Edit button is clicked or there is no information -->
 
-	<div class="edit">
-		<ion-item (click)="takePic()">
-			<img [src]="profileEntries.pic"/>
-		</ion-item>
-        <ion-item>
-          <ion-input type="text" placeholder="Name" [(ngModel)]="profileEntries.name"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input type="text" placeholder="Location" [(ngModel)]="profileEntries.location"></ion-input>
-        </ion-item>
+  <ion-list>
 
-  <ion-grid>
-    <h3>Allergy</h3>
-    <ion-row>
-      <ion-col><button full ion-button>Egg</button></ion-col>
-      <ion-col><button full ion-button>Fish</button></ion-col>
-      <ion-col><button full ion-button>Crustacean</button></ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col><button full ion-button>Nut</button></ion-col>
-      <ion-col><button full ion-button>Soy</button></ion-col>
-      <ion-col><button full ion-button>Milk</button></ion-col>
-    </ion-row>
-</ion-grid>
-
-
-  <ion-grid>
-    <h3>Allergy</h3>
-    <ion-row>
-      <ion-col><button full ion-button>Pizza</button></ion-col>
-      <ion-col><button full ion-button>Burger</button></ion-col>
-      <ion-col><button full ion-button>Salad</button></ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col><button full ion-button>Thai</button></ion-col>
-      <ion-col><button full ion-button>Asian</button></ion-col>
-      <ion-col><button full ion-button>Chinese</button></ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col><button full ion-button>Mexican</button></ion-col>
-      <ion-col><button full ion-button>Indian</button></ion-col>
-      <ion-col><button full ion-button>Korean</button></ion-col>
-    </ion-row>
-
-</ion-grid>
-
-	    <ion-item>
-	      <ion-label stacked color="primary">Cost range</ion-label>
-	      <ion-select [(ngModel)]="profileEntries.cost">
-	        <ion-option value="cost_range1">$0.00-5.00</ion-option>
-	        <ion-option value="cost_range2">$0.00-10.00</ion-option>
-	        <ion-option value="cost_range3">$0.00-15.00</ion-option>
-	        <ion-option value="cost_range4">$0.00-20.00</ion-option>
-	        <ion-option value="cost_range5">$0.00-30.00</ion-option>
-	        <ion-option value="cost_range6">$0.00-50.00</ion-option>
-	        <ion-option value="cost_range7">More than $50.00</ion-option>
-	   	  </ion-select>
-	    </ion-item>
-
-	    <ion-item>
-	      <ion-label stacked color="primary">Number of accompany</ion-label>
-	      <ion-select [(ngModel)]="profileEntries.accompany">
-	        <ion-option value="accompany_range1">1</ion-option>
-	        <ion-option value="accompany_range2">2</ion-option>
-	        <ion-option value="accompany_range3">3</ion-option>
-	        <ion-option value="accompany_range4">4</ion-option>
-	        <ion-option value="accompany_range5">5</ion-option>
-	        <ion-option value="accompany_range6">More than 5</ion-option>
-	        <ion-option value="accompany_range7">Doesn't matter</ion-option>
-	   	  </ion-select>
-	    </ion-item>
-
-	    <ion-item>
-	      <ion-label stacked color="primary">Introduction</ion-label>
-	      <ion-textarea [(ngModel)]="profileEntries.intro">
-	      </ion-textarea>
-	    </ion-item>
-
-       <ion-item>
-          <button ion-button (click)="saveEntry()">Ok</button>
-       </ion-item>
-
-   </div>
-
-
-
-<!--
-
-	<ion-icon name="alert"></ion-icon>
-	<p>Profile is not exist</p>
     <ion-item>
-      <button ion-button (click)="createProfile()">Create Profile</button>
+      <ion-label color="primary" stacked>Location</ion-label>
+      <ion-input [(ngModel)]="profileEntry.location"></ion-input>
     </ion-item>
 
- -->
+    <ion-item>
+      <ion-label color="primary" stacked>Introduction</ion-label>
+      <ion-textarea [(ngModel)]="profileEntry.intro"></ion-textarea>
+    </ion-item>
 
+    <ion-item>
+      <ion-label color="primary" stacked>Preferred Number of People</ion-label>
+      <ion-select [(ngModel)]="profileEntry.people">
+        <ion-option value="1 People">1 People</ion-option>
+        <ion-option value="2 People">2 People</ion-option>
+        <ion-option value="3-5 People">3-5 People</ion-option>
+        <ion-option value="Above 5 People">Above 5 People</ion-option>
+        <ion-option value="No Preference">No Preference</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked>Preferred Cost Range</ion-label>
+      <ion-select [(ngModel)]="profileEntry.cost">
+        <ion-option value="Below $5">Below $5</ion-option>
+        <ion-option value="Below $10">Below $10</ion-option>
+        <ion-option value="Below $15">Below $15</ion-option>
+        <ion-option value="Below $20">Below $20</ion-option>
+        <ion-option value="No Preference">No Preference</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-card>
+      <ion-card-header color="primary">Allergies</ion-card-header>
+      <ion-card-content>
+        <p *ngIf="allergyLength == 0">You haven't specified any allergies yet.</p>
+        <ion-chip *ngFor = "let item of profileEntry.allergy; let index=index">
+          <ion-label>{{item}}</ion-label>
+          <button ion-button color="dark">
+            <ion-icon name="close" (click)="deleteAllergyChip(index)"></ion-icon>
+          </button>
+        </ion-chip>
+
+        <ion-chip>
+          <button ion-button (click)="addAllergyChip()">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </ion-chip>
+      </ion-card-content>
+    </ion-card>
+
+    <hr/>
+
+    <ion-card>
+      <ion-card-header color="primary">Preferences</ion-card-header>
+      <ion-card-content>
+        <p *ngIf="allergyLength == 0">You haven't specified any allergies yet.</p>
+        <ion-chip *ngFor = "let item of profileEntry.preference; let index=index">
+          <ion-label>{{item}}</ion-label>
+          <button ion-button color="dark">
+            <ion-icon name="close" (click)="deletePreferenceChip(index)"></ion-icon>
+          </button>
+        </ion-chip>
+
+        <ion-chip>
+          <button ion-button (click)="addPreferenceChip()">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </ion-chip>
+      </ion-card-content>
+    </ion-card>
+
+    <hr/>
+
+  </ion-list>
+
+  <ion-row>
+    <ion-col text-center>
+      <button ion-button round class="button-create" (click)="updateProfile()" [disabled]="profileEntry.location=='' || profileEntry.intro==''">UPDATE</button>
+    </ion-col>
+  </ion-row>
 
 </ion-content>

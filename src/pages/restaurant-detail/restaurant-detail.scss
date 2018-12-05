@@ -61,32 +61,42 @@ page-restaurant-detail {
 				margin-top: 10px;
 				color: #606060;
 				font-size: 12px;
+				font-weight: 600;
+				// text-transform: uppercase;
 			}
-		}
 
-		ion-chip{
-			margin-right: 10px !important;
-		}
+			.button-join{
 
-		.appointment{
-			position: absolute;
-			top: 150px;
-			left: 16px;
-			z-index: 10000;
-			box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2) !important;
-			background-color: #f39c12;
-			background-image: linear-gradient(147deg, #f39c12 0%, #FF2525 74%);
+				height: 40px;
+				font-weight: 800;
+				font-size: 12px;
+				letter-spacing: 2px;
+			
+				box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2) !important;
 
+				background-color: #f39c12;
+				background-image: linear-gradient(147deg, #f39c12 0%, #FF2525 74%);
 
-
-			ion-label{
-				font-weight: 700 !important;
-				font-size: 1.15em !important;
 			}
 		}
 	}
 
 	ion-button{
 		padding: center;
+	}
+
+
+	.button-create{
+
+		height: 40px;
+		font-weight: 800;
+		font-size: 12px;
+		letter-spacing: 2px;
+	
+		box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2) !important;
+
+		background-color: #f39c12;
+		background-image: linear-gradient(147deg, #f39c12 0%, #FF2525 74%);
+
 	}
 }

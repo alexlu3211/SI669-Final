@@ -6,6 +6,8 @@ import { EventEntry } from '../../model/event-entry';
 
 import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
+import { Subject } from 'rxjs/Subject';
+
 import { Storage } from '@ionic/storage';
 import firebase from 'firebase';
 
@@ -41,11 +43,8 @@ export class DataProvider {
 	private profileObserver: any;
 	private profileObservable: Observable<ProfileEntry>;
 
-	private restaurantObserver: any;
-	private restaurantObservable: Observable<RestaurantEntry[]>;
-
-	private peopleObserver: any;
-	private peopleObservable: Observable<ProfileEntry[]>;
+	public restaurantSubject: any;
+	public profileSubject:any;
 
 	constructor(public http: HttpClient) {
 		console.log('Hello DataProvider Provider');
@@ -62,13 +61,8 @@ export class DataProvider {
 			this.eventObserver = observer;
 		})
 
-		this.restaurantObservable = Observable.create((observer) => {
-			this.restaurantObserver = observer;
-		})
-
-		this.peopleObservable = Observable.create((observer) => {
-			this.peopleObserver = observer;
-		})
+		this.restaurantSubject = new Subject<any>();
+		this.profileSubject = new Subject<any>();
 	}
 
 	// -------------------------- Restaurant functions -------------------------
@@ -112,22 +106,34 @@ export class DataProvider {
 		})		
 	}
 
-	public getRestaurantObservable(): Observable<RestaurantEntry[]> {
-		return this.restaurantObservable; 
-	}
-
 	public getRestaurantEntries(cuisine: string): RestaurantEntry[]{
 		return this.restaurantEntries[cuisine];
 	}
 
 	public notifyRestaurantSubscribers(): void {
-		this.restaurantObserver.next(undefined);
+		// this.restaurantObserver.next(undefined);
+		this.restaurantSubject.next(undefined);
 	}
 
-	// ---------------------------- People functions ---------------------------
+	public getRestaurantById(cuisine:string, id:string){
+		for (let restaurant of this.restaurantEntries[cuisine]){
+			if (restaurant.id == id) 
+				return restaurant;
+		}
+	}
 
-	public getPeopleObservable(): Observable<ProfileEntry[]> {
-		return this.peopleObservable;
+	public updateRestaurantEvents(cuisine:string, restaurantId: string, eventId: string){
+		let dataRef = this.db.ref("/restaurants/" + cuisine + "/" + restaurantId);
+		let	currentEventsId: string[] = []
+
+		dataRef.on("value", snapshot => {
+			if (snapshot.val().eventsId != null)
+				currentEventsId =  snapshot.val().eventsId;
+		})
+		currentEventsId.push(eventId);
+
+		dataRef.child("eventsId").set(currentEventsId);
+		this.notifyRestaurantSubscribers();
 	}
 
 	// --------------------------- Event functions -----------------------------
@@ -140,8 +146,10 @@ export class DataProvider {
 			snapshot.forEach(childSnapshot => {
 				let entry = {
 					id: 		    childSnapshot.val().id,
+					name:           childSnapshot.val().name,
 					restaurantId:   childSnapshot.val().restaurantId,
 					date: 		    childSnapshot.val().date,
+					time:           childSnapshot.val().time,
 					hostId: 	    childSnapshot.val().hostId,
 					participantsId: childSnapshot.val().participantsId,
 					memo:           childSnapshot.val().memo
@@ -150,6 +158,20 @@ export class DataProvider {
 			});
 			this.notifyEventSubscribers();
 		})		
+	}
+
+	public createEvent(eventEntry: EventEntry): string {
+		let dataRef = this.db.ref("/events");
+
+		eventEntry.hostId = this.username;
+		eventEntry.id = "event00" + (this.eventEntries.length + 1);
+		console.log(eventEntry);
+
+		dataRef.child(eventEntry.id).set(eventEntry);
+		this.notifyEventSubscribers();
+
+		return eventEntry.id;
+
 	}
 
 	public getEventEntries():EventEntry[] {  
@@ -215,29 +237,7 @@ export class DataProvider {
 	}
 
 	public notifyProfileSubscribers(){
-		this.profileObserver.next(undefined);
-	}
-
-	public updateProfileEntry(username: string,
-							  newEntry: ProfileEntry): void {
-
-		let parentRef = this.db.ref('/entries');
-		let childRef = parentRef.child(username);
-		childRef.set({
-			username: newEntry.username,
-			password: newEntry.password,
-			pic: newEntry.pic, 
-			name: newEntry.name, 
-			location: newEntry.location, 
-			allergy: newEntry.allergy, 
-			preference: newEntry.preference,
-			cost: newEntry.cost,
-			people: newEntry.people,
-			intro: newEntry.intro,
-			eventsId: newEntry.eventsId
-		});
-
-		this.notifyProfileSubscribers();
+		this.profileSubject.next(undefined);
 	}
 
 	public getProfileByUsername(username: string): ProfileEntry {
@@ -258,5 +258,14 @@ export class DataProvider {
 		  }
 		}
 		return undefined;
+	}
+
+	public updateProfile(profileEntry: ProfileEntry){
+		let dataRef = this.db.ref("/profiles");
+		console.log(profileEntry);
+
+		dataRef.child(profileEntry.username).set(profileEntry);
+		this.notifyProfileSubscribers();
+
 	}
 }

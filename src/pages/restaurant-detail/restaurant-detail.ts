@@ -7,26 +7,17 @@ import { EventEntry } from '../../model/event-entry';
 import { ProfileEntry } from '../../model/profile-entry';
 import { RestaurantSchedulePage } from '../restaurant-schedule/restaurant-schedule';
 
-/**
- * Generated class for the RestaurantDetailPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-restaurant-detail',
   templateUrl: 'restaurant-detail.html',
 })
 export class RestaurantDetailPage {
-  name: string = "";
-  username: string = "";
-  hostId: string = "";
-  myDate: any;
 
   profileEntry: ProfileEntry[] = [];
 
+  cuisine: string;
+  restaurantId: string;
   restaurantEntry: RestaurantEntry;
   eventEntries: EventEntry[] = [];
   currentEventEntries: EventEntry[] = [];
@@ -37,24 +28,27 @@ export class RestaurantDetailPage {
   			  public dataProvider: DataProvider) {
 
   	this.restaurantEntry = this.navParams.get("restaurantEntry");
-  	console.log(this.restaurantEntry);
+    this.restaurantId = this.navParams.get("restaurantId");
+    this.cuisine = this.navParams.get("cuisine");
 
 
+    this.dataProvider.restaurantSubject.subscribe(update => {
+      this.restaurantEntry = dataProvider.getRestaurantById(this.cuisine, this.restaurantId);
+      // console.log("current restaurant", dataProvider.getRestaurantById(this.cuisine, this.restaurantId));
+    })
 
     this.dataProvider.getEventObservable().subscribe(update => {
       this.eventEntries = dataProvider.getEventEntries();
-      console.log(this.eventEntries);
       this.currentEventEntries = [];
 
       for (var event of this.eventEntries){
-        console.log(event.restaurantId, this.restaurantEntry.id)
         if (event.restaurantId == this.restaurantEntry.id) 
           this.currentEventEntries.push(event);
       }
-      console.log("current events", this.currentEventEntries);
+      console.log(this.currentEventEntries)
     })
 
-    this.dataProvider.getProfileObservable().subscribe();
+    this.dataProvider.profileSubject.subscribe();
 
     this.dataProvider.loadProfileEntries();
     this.dataProvider.loadEventEntries();
@@ -88,7 +82,10 @@ export class RestaurantDetailPage {
   }
 
 
-  private createSchedule(name: string){
-  	this.navCtrl.push(RestaurantSchedulePage, {name: name});  	
+  private createNewEvent(){
+  	this.navCtrl.push(RestaurantSchedulePage, {
+      cuisine: this.cuisine,
+      restaurantId: this.restaurantId
+    });  	
   }
 }

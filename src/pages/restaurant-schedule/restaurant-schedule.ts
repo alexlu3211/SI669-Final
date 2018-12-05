@@ -7,34 +7,43 @@ import { EventEntry } from '../../model/event-entry';
 import { ProfileEntry } from '../../model/profile-entry';
 import { RestaurantDetailPage } from '../restaurant-detail/restaurant-detail';
 
-/**
- * Generated class for the RestaurantSchedulePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-restaurant-schedule',
   templateUrl: 'restaurant-schedule.html',
 })
 export class RestaurantSchedulePage {
-  name: string = "";	
-  restaurantEntry: RestaurantEntry;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public dataProvider: DataProvider) {
-	this.name = this.navParams.get("name");
-	this.restaurantEntry = new RestaurantEntry();
-    // this.dataProvider.loadDummyRestaurantEntries();
-    this.dataProvider.getRestaurantObservable().subscribe(update => {
-      // this.restaurantEntry = dataProvider.getRestaurantByUsername(this.name);
-    })
+  cuisine: string;
+  restaurantId: string;
+  event: EventEntry;
+  myDate: any = "";
+  myTime: any = "";
 
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              public dataProvider: DataProvider) {
+
+    this.restaurantId = this.navParams.get("restaurantId");
+    this.cuisine = this.navParams.get("cuisine");
+
+    this.event = new EventEntry();
+    this.event.name = ""
+    this.event.memo = ""
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RestaurantSchedulePage');
-  }
+  createEvent(){
 
+    this.event.time = new Date(this.event.time).toString();
+    console.log(this.event.time);
+    
+    this.event.restaurantId = this.restaurantId;
+    console.log(this.event);
+
+    this.dataProvider.createEvent(this.event);
+    this.dataProvider.updateRestaurantEvents(this.cuisine, this.restaurantId, this.event.id);
+
+    this.navCtrl.pop();
+
+  }
 }

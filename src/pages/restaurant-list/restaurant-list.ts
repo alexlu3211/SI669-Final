@@ -23,12 +23,17 @@ export class RestaurantListPage {
 		this.cuisine = this.navParams.get("cuisine");
 	 	this.restaurantEntries = this.navParams.get("restaurantEntries");
 
-	 	console.log(this.restaurantEntries)
+	 	console.log(this.restaurantEntries);
 
+	  	this.dataProvider.restaurantSubject.subscribe(update => {
+	      this.restaurantEntries = dataProvider.getRestaurantEntries(this.cuisine);
+	    })
 	}
 
 	private goToDetail(restaurant: RestaurantEntry){
 		this.navCtrl.push(RestaurantDetailPage, {
+			cuisine: this.cuisine,
+			restaurantId: restaurant.id,
 			restaurantEntry: restaurant
 		});
 	}

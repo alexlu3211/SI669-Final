@@ -15,7 +15,7 @@
     </ion-avatar>
     <h1> {{ profileEntry.name }} </h1>
     <p> {{ profileEntry.location }} </p>
-    <ion-icon name="create" item-end color="primary"></ion-icon>
+    <ion-icon name="create" item-end color="primary" (click)="editEntry()"></ion-icon>
   </ion-item>
 
   <ion-card>

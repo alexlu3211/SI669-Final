@@ -20,7 +20,7 @@
 		</ion-card-content>
 	</ion-card>
 
-	<h1 class="subtitle">{{ restaurantEntry.eventsId?.length }} events are upcoming</h1>
+	<h1 class="subtitle">{{ restaurantEntry.eventsId?.length || "No"}} upcoming events</h1>
 
 	<ion-card *ngFor="let event of currentEventEntries">
 		<ion-card-content>
@@ -30,11 +30,11 @@
 				</ion-col>
 
 				<ion-col col-9>
-					<h2> {{ dataProvider.getProfileByUsername(event.hostId).name }}'s Event </h2>
-					<h3> <ion-icon name="alarm"></ion-icon> {{ event.date | date:'short'}} </h3>
+					<h2> {{ event.name }} </h2>
+					<h3> <ion-icon name="alarm"></ion-icon> {{ event.date | date:'mediumDate'}}, {{ event.time }}</h3>
 					<p> "{{ event.memo }}"</p>
 					
-					<p class="label-participants"> There are {{ event.participantsId?.length }} people in this event </p>
+					<p class="label-participants"> There are {{ event.participantsId?.length || 0 }} people in this event </p>
 					<ion-row>
 						<div class="guest-picture-container">
 						<img *ngFor="let participantId of event.participantsId"
@@ -45,31 +45,20 @@
 				</ion-col>
 			</ion-row>
 
-
+			<ion-row>
+				<ion-col text-center>
+					<button ion-button round class="button-join">JOIN EVENT</button>
+				</ion-col>
+			</ion-row>
 
 		</ion-card-content>
 
 	</ion-card>
 
+	<ion-row>
+		<ion-col text-center>
+			<button ion-button round class="button-create" (click)="createNewEvent()">CREATE AN EVENT</button>
+		</ion-col>
+	</ion-row>
 
-<!-- *ngFor="let entry of eventEntry" -->
-<!-- 	<ion-card *ngFor="let entry of eventEntry">
-		<ion-card-content>
-			<ion-grid>
-			  <ion-row>
-			    <ion-col>
-			    	<img [src]="profileEntry.pic">
-			    	<p> {{entry.hostId}} </p>
-			    </ion-col>
-			    <ion-col>
-			    	<p> # of participants: {{entry.participantsId.length}} </p>
-			        <p> Date: {{entry.date}} </p>
-			        <p> Participants: {{entry.participantsId}} </p>
-			    </ion-col>
-			  </ion-row>
-			</ion-grid>
-			<button ion-button (click)="joinSchedule(entry.hostId)">Join this party</button>
-		</ion-card-content>
-	</ion-card> -->
-	<button ion-button (click)="createSchedule(restaurantEntry.name)">Make your own schedule</button>
 </ion-content>

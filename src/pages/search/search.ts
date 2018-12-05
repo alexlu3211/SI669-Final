@@ -26,14 +26,12 @@ export class SearchPage {
 
     this.dataProvider.loadRestaurantEntries();
 
-    this.dataProvider.getRestaurantObservable().subscribe(update => {
+    this.dataProvider.restaurantSubject.subscribe(update => {
       this.restaurantEntries.korean = dataProvider.getRestaurantEntries("korean");
       this.restaurantEntries.chinese = dataProvider.getRestaurantEntries("chinese");
       this.restaurantEntries.mexican = dataProvider.getRestaurantEntries("mexican");
       this.restaurantEntries.indian = dataProvider.getRestaurantEntries("indian");
     })
-
-    console.log(this.restaurantEntries);
 
   }
 
