@@ -28,7 +28,7 @@ export class PeoplePage {
     this.myprofileEntry = new ProfileEntry();
 
     // this.dataProvider.loadDummyProfileEntries();
-    this.dataProvider.getProfileObservable().subscribe(update => {
+    this.dataProvider.profileSubject.subscribe(update => {
       this.profileEntry = dataProvider.getProfileEntries();
       this.myprofileEntry = dataProvider.getProfileByUsername(this.username);
       this.profileEntry.shift();
