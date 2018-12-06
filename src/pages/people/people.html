@@ -1,22 +1,22 @@
-
 <ion-header>
 
   <ion-navbar>
     <ion-title>People</ion-title>
   </ion-navbar>
 
-</ion-header>
-
-
-<ion-content padding>
-
-	<ion-list>
+  <ion-toolbar>
 		<ion-item class="availability">
 		  <ion-label color="primary" *ngIf="!myProfile.available">Not Available Now</ion-label>
 		  <ion-label color="primary" *ngIf="myProfile.available">Available Now</ion-label>
 		  <ion-toggle [(ngModel)]="myProfile.available" (ionChange)="updateAvailability()"></ion-toggle>
 		</ion-item>
-	</ion-list>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
 
 	<div *ngIf="!myProfile.available">
 		<ion-list>
