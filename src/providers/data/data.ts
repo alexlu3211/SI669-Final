@@ -8,6 +8,7 @@ import { Subject } from 'rxjs/Subject';
 
 import { Storage } from '@ionic/storage';
 import firebase from 'firebase';
+// import * as functions from 'firebase-functions';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCGbFHLdOQ4gtG8X62d8926qSwFazII0K8",

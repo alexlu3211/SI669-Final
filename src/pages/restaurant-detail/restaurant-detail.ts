@@ -14,6 +14,8 @@ import { RestaurantSchedulePage } from '../restaurant-schedule/restaurant-schedu
 })
 export class RestaurantDetailPage {
 
+  username: string = '';
+
   profileEntry: ProfileEntry[] = [];
 
   cuisine: string;
@@ -30,7 +32,7 @@ export class RestaurantDetailPage {
   	this.restaurantEntry = this.navParams.get("restaurantEntry");
     this.restaurantId = this.navParams.get("restaurantId");
     this.cuisine = this.navParams.get("cuisine");
-
+    this.username = this.dataProvider.getUserName();
 
     this.dataProvider.restaurantSubject.subscribe(update => {
       this.restaurantEntry = dataProvider.getRestaurantById(this.cuisine, this.restaurantId);
@@ -55,9 +57,14 @@ export class RestaurantDetailPage {
 
   }
 
-  private joinSchedule(hostId: string){
+  isUserInEvent(event: EventEntry):boolean {
+    if (event.participantsId == null) return false;
+    return event.participantsId.indexOf(this.username) > -1
+  }
+
+  private joinEvent(event: EventEntry){
       let alert = this.alertCtrl.create({
-      title: "Do you want to eat with this user?",
+      title: "Do you want to join this event?",
       buttons: [
         {  
           text:  "No",
@@ -66,21 +73,46 @@ export class RestaurantDetailPage {
         {  
           text:  "Yes",
           handler: data => {
-            console.log("Second Popup: Yes")
-             let alert_second = this.alertCtrl.create({
-              title: "We sent a text message to this user",
-              subTitle: "You'll receive a text message soon",
+              // console.log("Second Popup: Yes")
+              let alert_second = this.alertCtrl.create({
+              title: "Congratulations",
+              subTitle: "You have joined the event " + event.name,
               buttons: [
                 {  
                   text:  "Ok",
                   role: "ok"
                 }
               ]});
-    		alert_second.present();    
+    		      alert_second.present();    
           }}]});
     alert.present();    
   }
 
+  private quitEvent(event: EventEntry){
+      let alert = this.alertCtrl.create({
+      title: "Do you want to quite this event?",
+      buttons: [
+        {  
+          text:  "No",
+          role: "no"
+        },
+        {  
+          text:  "Yes",
+          handler: data => {
+              // console.log("Second Popup: Yes")
+              let alert_second = this.alertCtrl.create({
+              title: "Cancellation Confirmed",
+              subTitle: "You have quitted the event " + event.name,
+              buttons: [
+                {  
+                  text:  "Ok",
+                  role: "ok"
+                }
+              ]});
+              alert_second.present();    
+          }}]});
+    alert.present();    
+  }
 
   private createNewEvent(){
   	this.navCtrl.push(RestaurantSchedulePage, {

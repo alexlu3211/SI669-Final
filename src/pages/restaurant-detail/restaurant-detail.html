@@ -45,9 +45,10 @@
 				</ion-col>
 			</ion-row>
 
-			<ion-row>
+			<ion-row *ngIf="event.hostId!=username">
 				<ion-col text-center>
-					<button ion-button round class="button-join">JOIN EVENT</button>
+					<button ion-button round class="button-join" *ngIf="!isUserInEvent(event)" (click)="joinEvent(event)">JOIN EVENT</button>
+					<button ion-button round class="button-join" *ngIf="isUserInEvent(event)" (click)="quitEvent(event)">QUIT EVENT</button>
 				</ion-col>
 			</ion-row>
 

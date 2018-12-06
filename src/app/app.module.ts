@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 import { SearchPage } from '../pages/search/search';
 import { PeoplePage } from '../pages/people/people';
@@ -77,7 +78,8 @@ import { DataProvider } from '../providers/data/data';
     SplashScreen,
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DataProvider
+    DataProvider,
+    LocalNotifications
   ]
 })
 export class AppModule {}

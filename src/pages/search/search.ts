@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { RestaurantListPage } from '../restaurant-list/restaurant-list';
 import { DataProvider } from '../../providers/data/data';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 import { RestaurantEntry } from '../../model/restaurant-entry';
 
@@ -22,7 +23,8 @@ export class SearchPage {
 
   constructor(public navCtrl: NavController, 
   			      public navParams: NavParams,
-              public dataProvider: DataProvider) {
+              public dataProvider: DataProvider,
+              public localNotifications: LocalNotifications) {
 
     this.dataProvider.loadRestaurantEntries();
 
@@ -31,6 +33,11 @@ export class SearchPage {
       this.restaurantEntries.chinese = dataProvider.getRestaurantEntries("chinese");
       this.restaurantEntries.mexican = dataProvider.getRestaurantEntries("mexican");
       this.restaurantEntries.indian = dataProvider.getRestaurantEntries("indian");
+
+      // this.localNotifications.schedule({
+      //   id: 1,
+      //   text: "Test"
+      // })
     })
 
   }
