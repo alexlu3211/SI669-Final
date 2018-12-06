@@ -45,14 +45,11 @@ export class PeoplePage {
   }
 
   updateAvailability(){
-    if (!this.myProfile.available)
-      this.myProfile.post = "";
     this.dataProvider.updateAvailability(this.myProfile.available);
   }
 
   becomeAvailable(){
     this.myProfile.available = true;
-    this.updateAvailability();
     this.dataProvider.updateAvailabilityPost(this.myProfile.available, this.myProfile.post);
 
   }
