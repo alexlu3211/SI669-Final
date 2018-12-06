@@ -33,7 +33,8 @@ export class DataProvider {
 								"mexican": [], 
 								"indian": []}
 	private eventEntries: EventEntry[] = [];
-	private username: string = "user001";
+	private username: string = "";
+	private isLoggedIn: boolean = false;
 
 	public restaurantSubject: any;
 	public profileSubject:any;
@@ -67,23 +68,24 @@ export class DataProvider {
 			this.restaurantEntries[cuisine] = [];
 			snapshot.forEach(childSnapshot => {
 				let entry = {
-					id: childSnapshot.val().id,
-					alias: childSnapshot.val().alia,
-					name: childSnapshot.val().name,
-					image_url: childSnapshot.val().image_url,
-					is_closed: childSnapshot.val().is_closed,
-					url: childSnapshot.val().url,
-					eventsId: childSnapshot.val().eventsId,
-					review_count: childSnapshot.val().review_count,
-					categories: childSnapshot.val().categories,
-					rating: childSnapshot.val().rating,
-					coordinates: childSnapshot.val().coordinates,
-					transactions: childSnapshot.val().transactions,
-					price: childSnapshot.val().price,
-					location: childSnapshot.val().location,
-					phone: childSnapshot.val().phone,
-					display_phone: childSnapshot.val().display_phone,
-					distance: childSnapshot.val().distance
+					id: 			childSnapshot.val().id,
+					alias: 			childSnapshot.val().alia,
+					name: 			childSnapshot.val().name,
+					cuisine:		childSnapshot.val().cuisine,
+					image_url: 		childSnapshot.val().image_url,
+					is_closed: 		childSnapshot.val().is_closed,
+					url: 			childSnapshot.val().url,
+					eventsId: 		childSnapshot.val().eventsId,
+					review_count: 	childSnapshot.val().review_count,
+					categories: 	childSnapshot.val().categories,
+					rating: 		childSnapshot.val().rating,
+					coordinates: 	childSnapshot.val().coordinates,
+					transactions: 	childSnapshot.val().transactions,
+					price: 			childSnapshot.val().price,
+					location: 		childSnapshot.val().location,
+					phone: 			childSnapshot.val().phone,
+					display_phone: 	childSnapshot.val().display_phone,
+					distance: 		childSnapshot.val().distance
 				};
 				this.restaurantEntries[cuisine].push(entry);
 				this.notifyRestaurantSubscribers();
@@ -106,13 +108,27 @@ export class DataProvider {
 		}
 	}
 
-	public getRestaurantName(id: string): RestaurantEntry[]{
-		let cuisine = "korean"
-		for (let e of this.restaurantEntries[cuisine]) {
-		  if (e.id === id) {
-		     return e.name
-		  }
+	public getRestaurantCuisineById(id: string): string{
+		let cuisines = ["korean", "chinese", "mexican", "indian"]
+		for (let cuisine of cuisines){
+			for (let restaurant of this.restaurantEntries[cuisine]){
+				if (restaurant.id == id) 
+					return restaurant.cuisine;
+			}			
 		}
+		return "";
+	}
+
+	public getRestaurantName(id: string): string {
+
+		let cuisines = ["korean", "chinese", "mexican", "indian"]
+		for (let cuisine of cuisines){
+			for (let restaurant of this.restaurantEntries[cuisine]){
+				if (restaurant.id == id) 
+					return restaurant.name;
+			}			
+		}
+
 		return undefined;
 	}
 
@@ -164,8 +180,12 @@ export class DataProvider {
 		dataRef.child(eventEntry.id).set(eventEntry);
 		this.notifyEventSubscribers();
 
-		return eventEntry.id;
+		dataRef = this.db.ref("/profiles");
+		let currentCreatedEventsId = this.getProfileCreatedEventsByUsername(this.username)
+		currentCreatedEventsId.push(eventEntry.id);
+		dataRef.child(this.username).update({createdEventsId: currentCreatedEventsId});
 
+		return eventEntry.id;
 	}
 
 	public getEventEntries():EventEntry[] {  
@@ -195,19 +215,20 @@ export class DataProvider {
 			this.profileEntries = [];
 			snapshot.forEach(childSnapshot => {
 				let entry = {
-					username:   childSnapshot.val().username,
-					password:   childSnapshot.val().password,
-					pic: 	    childSnapshot.val().pic,
-					name: 	    childSnapshot.val().name,
-					location:   childSnapshot.val().location,
-					available:  childSnapshot.val().available,
-					allergy:    childSnapshot.val().allergy,
-					preference: childSnapshot.val().preference,
-					cost: 	    childSnapshot.val().cost,
-					people: 	childSnapshot.val().people,
-					intro: 		childSnapshot.val().intro,
-					post: 		childSnapshot.val().post,
-					eventsId: 	childSnapshot.val().eventsId,
+					username:   		childSnapshot.val().username,
+					password:   		childSnapshot.val().password,
+					pic: 	    		childSnapshot.val().pic,
+					name: 	    		childSnapshot.val().name,
+					location:   		childSnapshot.val().location,
+					available:  		childSnapshot.val().available,
+					allergy:    		childSnapshot.val().allergy,
+					preference: 		childSnapshot.val().preference,
+					cost: 	    		childSnapshot.val().cost,
+					people: 			childSnapshot.val().people,
+					intro: 				childSnapshot.val().intro,
+					post: 			    childSnapshot.val().post,
+					joinedEventsId: 	childSnapshot.val().joinedEventsId,
+					createdEventsId:    childSnapshot.val().createdEventsId
 				};
 				this.profileEntries.push(entry);
 			});
@@ -247,20 +268,49 @@ export class DataProvider {
 		return undefined;
 	}
 
+	public getProfileCreatedEventsByUsername(username: string): string[]{
+		for (let profile of this.profileEntries) {
+		  if (profile.username === username) {
+		     if (profile.createdEventsId != null)
+		     	return profile.createdEventsId
+		     else return [];
+		  }
+		}		
+	}
+
 	public updateProfile(profileEntry: ProfileEntry){
 		let dataRef = this.db.ref("/profiles");
 		console.log(profileEntry);
 
-		dataRef.child(profileEntry.username).set(profileEntry);
+		dataRef.child(profileEntry.username).update(profileEntry);
 		this.notifyProfileSubscribers();
 	}
 
-	public updateAvailability(availability: boolean, post: string){
+	public updateAvailability(availability: boolean){
+		let dataRef = this.db.ref("/profiles");
+		dataRef.child(this.username).update({available: availability});
+		this.notifyProfileSubscribers();		
+	}
+
+	public updateAvailabilityPost(availability: boolean, post: string){
 		let dataRef = this.db.ref("/profiles");
 
-		dataRef.child(this.username).update({available: availability});
-		dataRef.child(this.username).update({post: post});
+		console.log("post", post);
+		if (post != null) dataRef.child(this.username).update({post: post, available: availability});
 
 		this.notifyProfileSubscribers();		
+	}
+
+	public verifyPassword(username: string, password: string): boolean{
+
+		for (let profile of this.profileEntries){
+			if (profile.username == username && profile.password == password){
+				this.isLoggedIn = true;
+				this.username = username;
+				this.notifyProfileSubscribers();
+				return true;
+			}
+		}
+		return false;
 	}
 }

@@ -28,13 +28,13 @@ export class ProfilePage implements OnInit{
               public navParams: NavParams, 
               public dataProvider: DataProvider) {
 
-    this.username = dataProvider.getUserName();
     console.log(this.username);
     this.profileEntry = new ProfileEntry();
 
 
     this.dataProvider.profileSubject.subscribe(update => {
-      this.profileEntry = dataProvider.getProfileByUsername(this.username);
+      this.username = dataProvider.getUserName();
+      if (this.username != '') this.profileEntry = dataProvider.getProfileByUsername(this.username);
  
       if (this.profileEntry.allergy != null) 
         this.allergyLength = this.profileEntry.allergy.length

@@ -8,7 +8,9 @@
 
 <ion-content padding>
 
-	<ion-card *ngFor="let event of currentEventEntries">
+  	<h1 class="subtitle"> Your Created {{ createdEventEntries?.length}} Events </h1>
+
+	<ion-card *ngFor="let event of createdEventEntries">
 		<ion-card-content (click)=gotoScheduleDetail(event)>
 			<ion-row>
 				<ion-col col-3>
@@ -16,25 +18,68 @@
 				</ion-col>
 
 				<ion-col col-9>
-					<h2> {{ dataProvider.getProfileByUsername(event.hostId).name }}'s Event </h2>
-					<h3> <ion-icon name="alarm"></ion-icon> {{ event.date | date:'short'}} </h3>
-					<p> <ion-icon ios="ios-at-outline" md="md-at"></ion-icon> {{ dataProvider.getRestaurantName(event.restaurantId) }} </p>
-					<p> "{{ event.memo }}"</p>
+					<h2> {{ event.name }} </h2>
 					
-					<p class="label-participants"> There are {{ event.participantsId?.length }} people in this event </p>
+					<div class="label-time">
+						<div class="label-icon"><ion-icon name="alarm"></ion-icon></div>
+						<h3>{{ event.date | date:'mediumDate'}}, {{ event.time }} </h3>
+					</div>
+
+					<div class="label-time">
+						<div class="label-icon"><ion-icon name="pin"></ion-icon> </div>
+						<h3> {{ dataProvider.getRestaurantName(event.restaurantId) }} </h3>
+					</div>
+
+					<p> "{{ event.memo }}"</p>
+					<p class="label-participants"> There are {{ event.participantsId?.length || 0}} people in this event </p>
 
 					<ion-row>
 						<div class="guest-picture-container">
-
-
+						<img *ngFor="let participantId of event.participantsId"
+							 class="guest-picture" 
+							 src="{{ dataProvider.getProfilePicByUsername(participantId) }}" />
 						</div>
 					</ion-row>
 				</ion-col>
 			</ion-row>
-
-
-
 		</ion-card-content>
+	</ion-card>
 
+
+	<h1 class="subtitle"> Your Joined {{ joinedEventEntries?.length}} Events </h1>
+
+	<ion-card *ngFor="let event of joinedEventEntries">
+		<ion-card-content (click)=gotoScheduleDetail(event)>
+			<ion-row>
+				<ion-col col-3>
+					<img class="host-picture" src="{{ dataProvider.getProfilePicByUsername(event.hostId) }}"/>
+				</ion-col>
+
+				<ion-col col-9>
+					<h2> {{ event.name }} </h2>
+					
+					<div class="label-time">
+						<div class="label-icon"><ion-icon name="alarm"></ion-icon></div>
+						<h3>{{ event.date | date:'mediumDate'}}, {{ event.time }} </h3>
+					</div>
+
+					<div class="label-time">
+						<div class="label-icon"><ion-icon name="pin"></ion-icon> </div>
+						<h3> {{ dataProvider.getRestaurantName(event.restaurantId) }} </h3>
+					</div>
+
+					<p> "{{ event.memo }}"</p>
+					<p class="label-participants"> There are {{ event.participantsId?.length || 0}} people in this event </p>
+
+					<ion-row>
+						<div class="guest-picture-container">
+						<img *ngFor="let participantId of event.participantsId"
+							 class="guest-picture" 
+							 src="{{ dataProvider.getProfilePicByUsername(participantId) }}" />
+						</div>
+					</ion-row>
+				</ion-col>
+			</ion-row>
+		</ion-card-content>
 	</ion-card>
 </ion-content>

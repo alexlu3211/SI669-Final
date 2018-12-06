@@ -4,18 +4,19 @@
     <ion-title>People</ion-title>
   </ion-navbar>
 
+  <ion-toolbar>
+  	<ion-item class="availability">
+  		<ion-label start color="primary" *ngIf="!myProfile.available">Not Available Now</ion-label>
+		<ion-label start color="primary" *ngIf="myProfile.available">Available Now</ion-label>
+
+			<ion-toggle [(ngModel)]="myProfile.available" (ionChange)="updateAvailability()"></ion-toggle>
+	</ion-item>
+  </ion-toolbar>
+
 </ion-header>
 
 
 <ion-content padding>
-
-	<ion-list>
-		<ion-item class="availability">
-		  <ion-label color="primary" *ngIf="!myProfile.available">Not Available Now</ion-label>
-		  <ion-label color="primary" *ngIf="myProfile.available">Available Now</ion-label>
-		  <ion-toggle [(ngModel)]="myProfile.available" (ionChange)="updateAvailability()"></ion-toggle>
-		</ion-item>
-	</ion-list>
 
 	<div *ngIf="!myProfile.available">
 		<ion-list>
@@ -68,47 +69,4 @@
 				</ion-col>
 			</ion-row>
 	</div>
-
-<!-- 		<ion-card *ngIf="availability">
-			<ion-card-content class="col1">
-				<ion-grid>
-				  <ion-row>
-				    <ion-col class="col1">
-				    	<img [src]="myprofileEntry.pic">
-				    	<p>{{myprofileEntry.name}}</p>
-				    </ion-col>
-				    <ion-col class="col1">
-				    	<ion-icon ios="ios-remove-circle" md="md-remove-circle"></ion-icon> {{ myprofileEntry.allergy}}
-				        <ion-icon ios="ios-thumbs-up" md="md-thumbs-up"></ion-icon> {{myprofileEntry.preference}}
-				        <p>{{myprofileEntry.cost}}</p>
-				        <p>Number of accompany     {{myprofileEntry.accompany}}</p>
-				        <p>{{myprofileEntry.intro}}</p>
-				    </ion-col>
-				  </ion-row>
-				</ion-grid>
-			</ion-card-content>
-		</ion-card>
-
-	<ion-card *ngFor="let entry of profileEntry">
-		<ion-card-content (click)=setupschedule(entry.username)>
-			
-			<ion-grid>
-			  <ion-row>
-			    <ion-col>
-			    	<img [src]="entry.pic">
-			    	<p>{{entry.name}}</p>
-			    </ion-col>
-			    <ion-col>
-			    	<ion-icon ios="ios-remove-circle" md="md-remove-circle"></ion-icon> {{entry.allergy}}
-			        <ion-icon ios="ios-thumbs-up" md="md-thumbs-up"></ion-icon> {{entry.preference}}
-			        <p>{{entry.cost}}</p>
-			        <p>Number of accompany     {{entry.accompany}}</p>
-			        <p>{{entry.intro}}</p>
-			    </ion-col>
-			  </ion-row>
-			</ion-grid>
-
-		</ion-card-content>
-	</ion-card> -->
-
 </ion-content>

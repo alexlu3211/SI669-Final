@@ -10,8 +10,6 @@ import { PeoplePage } from '../pages/people/people';
 import { ProfilePage } from '../pages/profile/profile';
 import { SchedulePage } from '../pages/schedule/schedule';
 import { TabsPage } from '../pages/tabs/tabs';
-
-
 import { LoginPage } from '../pages/login/login';
 
 import { RestaurantListPageModule } from '../pages/restaurant-list/restaurant-list.module';

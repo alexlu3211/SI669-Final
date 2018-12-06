@@ -11,5 +11,6 @@ export class ProfileEntry{
     people: any;
     intro: string;
     post: string;
-    eventsId: string[];
+    joinedEventsId: string[];
+    createdEventsId: string[];
 }

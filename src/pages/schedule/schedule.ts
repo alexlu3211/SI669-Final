@@ -13,47 +13,44 @@ import { ScheduleDetailPage } from '../schedule-detail/schedule-detail';
   templateUrl: 'schedule.html',
 })
 export class SchedulePage {
-  name: string = "";
+
   username: string = "";
   hostId: string = "";
-  myDate: any;
 
   profileEntry: ProfileEntry[] = [];
-
-  // restaurantEntry: RestaurantEntry;
+  myProfile: ProfileEntry;
+  createdEventEntries: EventEntry[] = [];
+  joinedEventEntries: EventEntry[] = [];
   eventEntries: EventEntry[] = [];
-  currentEventEntries: EventEntry[] = [];
 
   constructor(public navCtrl: NavController, 
-  			  public navParams: NavParams, 
-  			  public dataProvider: DataProvider) {
+  			      public navParams: NavParams, 
+  			      public dataProvider: DataProvider) {
 
-  	// this.restaurantEntry = this.navParams.get("restaurantEntry");
-  	// console.log(this.restaurantEntry);
+    this.dataProvider.profileSubject.subscribe(update =>{
+      this.username = dataProvider.getUserName();
+      this.myProfile = dataProvider.getProfileByUsername(this.username);
+    });
 
     this.dataProvider.eventSubject.subscribe(update => {
       this.eventEntries = dataProvider.getEventEntries();
-      console.log(this.eventEntries);
-      this.currentEventEntries = [];
+      this.createdEventEntries = [];
+      this.joinedEventEntries = [];
 
-      for (var event of this.eventEntries){
-        // console.log(event.restaurantId, this.restaurantEntry.id)
-        // if (event.restaurantId == this.restaurantEntry.id) 
-          this.currentEventEntries.push(event);
+      for (let event of this.eventEntries){
+        if (this.myProfile.createdEventsId.indexOf(event.id) > -1) 
+          this.createdEventEntries.push(event);
+        if (this.myProfile.joinedEventsId.indexOf(event.id) > -1) 
+          this.joinedEventEntries.push(event);
       }
-      console.log("current events", this.currentEventEntries);
+      console.log("created events", this.createdEventEntries);
+      console.log("joined events", this.joinedEventEntries);
     })
-
-    this.dataProvider.profileSubject.subscribe();
 
     this.dataProvider.loadProfileEntries();
     this.dataProvider.loadEventEntries();
 
   }
-
-  // private gotoScheduleDetail(currentEventEntries: EventEntry){
-  // 	this.navCtrl.push(ScheduleDetailPage, {eventEntry: currentEventEntries});  
-  // }
 
   private gotoScheduleDetail(eventEntries: EventEntry){
     this.navCtrl.push(ScheduleDetailPage, {eventEntry: eventEntries});  

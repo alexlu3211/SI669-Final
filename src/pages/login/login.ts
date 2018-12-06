@@ -1,14 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, App } from 'ionic-angular';
 // import { RestaurantDataProvider } from '../../providers/restaurant-data/restaurant-data';
-import { SearchPage } from '../search/search';
 import { SignupPage } from '../signup/signup';
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { TabsPage } from '../tabs/tabs';
+import { DataProvider } from '../../providers/data/data'
 
 @IonicPage()
 @Component({
@@ -17,24 +12,31 @@ import { SignupPage } from '../signup/signup';
 })
 export class LoginPage {
 
-  username: string;
-  password: string;
+  username: string = "";
+  password: string = "";
+  correct: boolean = true;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              private alertCtrl: AlertController,
+              private app: App,
+              private dataProvider: DataProvider) {
 
+    this.dataProvider.loadProfileEntries();
   }
 
-  login(entryID: string){
-  	/* With UserId, find the password, and check whether input password is correct */
-	this.navCtrl.push(SearchPage, {"entryID": entryID});
+  login(){
+
+    this.correct = this.dataProvider.verifyPassword(this.username, this.password);
+
+    if (this.correct){
+      this.app.getRootNav().setRoot(TabsPage);
+    }
+
   }
 
   signup(){
-  	this.navCtrl.push(SignupPage);
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+      this.navCtrl.push(SignupPage);
   }
 
 }

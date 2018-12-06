@@ -13,9 +13,18 @@
         </ion-col>
 
         <ion-col col-9>
-          <h2> {{ dataProvider.getProfileByUsername(eventEntry.hostId).name }}'s Event </h2>
-          <h3> <ion-icon name="alarm"></ion-icon> {{ eventEntry.date | date:'short'}} </h3>
-          <p> <ion-icon ios="ios-at-outline" md="md-at"></ion-icon> {{ dataProvider.getRestaurantName(eventEntry.restaurantId) }} </p>
+          <h2> {{ eventEntry.name }} </h2>
+          
+          <div class="label-time">
+            <div class="label-icon"><ion-icon name="alarm"></ion-icon></div>
+            <h3>{{ eventEntry.date | date:'mediumDate'}}, {{ eventEntry.time }} </h3>
+          </div>
+
+          <div class="label-time">
+            <div class="label-icon"><ion-icon name="pin"></ion-icon> </div>
+            <h3> {{ dataProvider.getRestaurantName(eventEntry.restaurantId) }} </h3>
+          </div>
+
           <p> "{{ eventEntry.memo }}"</p>
          
 

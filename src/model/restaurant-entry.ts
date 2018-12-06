@@ -2,6 +2,7 @@ export class RestaurantEntry {
     id: string;
     alias: string;
     name: string;
+    cuisine: string;
     image_url: string;
     is_closed: boolean;
     url: string;

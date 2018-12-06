@@ -21,11 +21,10 @@ export class PeoplePage {
               public dataProvider: DataProvider, 
               private alertCtrl: AlertController) {
     
-    this.username = dataProvider.getUserName();
     this.myProfile = new ProfileEntry();
-    this.dataProvider.loadProfileEntries();
 
     this.dataProvider.profileSubject.subscribe(update => {
+      this.username = dataProvider.getUserName();
       this.myProfile = dataProvider.getProfileByUsername(this.username);
       if (this.myProfile.post != null) this.myProfile.post = "";
 
@@ -37,19 +36,20 @@ export class PeoplePage {
           this.availableProfiles.push(profile);
         }
       }
-      console.log(this.availableProfiles)
     })
+
+    this.dataProvider.loadProfileEntries();
+
+
   }
 
   updateAvailability(){
-    if (!this.myProfile.available)
-      this.myProfile.post = "";
-    this.dataProvider.updateAvailability(this.myProfile.available, this.myProfile.post);
+      this.dataProvider.updateAvailability(this.myProfile.available);
   }
 
   becomeAvailable(){
     this.myProfile.available = true;
-    this.updateAvailability();
+    this.dataProvider.updateAvailabilityPost(this.myProfile.available, this.myProfile.post);
   }
 
   // private setupschedule(username: string){
