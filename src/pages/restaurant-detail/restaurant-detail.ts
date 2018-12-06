@@ -73,7 +73,14 @@ export class RestaurantDetailPage {
         {  
           text:  "Yes",
           handler: data => {
-              // console.log("Second Popup: Yes")
+              if (event.participantsId != null)
+                event.participantsId.push(this.username)
+              else 
+                event.participantsId = [this.username]
+              console.log(event);
+
+              this.dataProvider.joinUserToEvent(event);
+
               let alert_second = this.alertCtrl.create({
               title: "Congratulations",
               subTitle: "You have joined the event " + event.name,
@@ -99,7 +106,13 @@ export class RestaurantDetailPage {
         {  
           text:  "Yes",
           handler: data => {
-              // console.log("Second Popup: Yes")
+
+              event.participantsId.splice(event.participantsId.indexOf(this.username), 1);
+              console.log(event);
+
+              this.dataProvider.removeUserFromEvent(event);
+
+
               let alert_second = this.alertCtrl.create({
               title: "Cancellation Confirmed",
               subTitle: "You have quitted the event " + event.name,

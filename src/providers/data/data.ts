@@ -207,6 +207,36 @@ export class DataProvider {
 		return undefined;
 	}
 
+	public joinUserToEvent(eventEntry: EventEntry) {
+		let dataRef = this.db.ref("/events");
+		dataRef.child(eventEntry.id).update(eventEntry);
+
+		dataRef = this.db.ref("/profiles");
+		let currentJoinedEventsId = this.getProfileByUsername(this.username).createdEventsId;
+		currentJoinedEventsId.push(eventEntry.id);
+		console.log(currentJoinedEventsId);
+
+		dataRef.child(this.username).child("joinedEventsId").update(currentJoinedEventsId);
+		this.notifyEventSubscribers();
+		this.notifyProfileSubscribers();    
+	}
+
+	public removeUserFromEvent(eventEntry: EventEntry){
+		let dataRef = this.db.ref("/events");
+		dataRef.child(eventEntry.id).update(eventEntry);
+
+		dataRef = this.db.ref("/profiles");
+		let currentJoinedEventsId = this.getProfileByUsername(this.username).createdEventsId;
+
+		currentJoinedEventsId.splice(currentJoinedEventsId.indexOf(eventEntry.id), 1);
+		console.log(currentJoinedEventsId);
+
+		dataRef.child(this.username).child("joinedEventsId").update(currentJoinedEventsId);
+		this.notifyEventSubscribers();
+		this.notifyProfileSubscribers();   
+
+	}
+
 	// --------------------------- Profile functions ---------------------------
 
 	public loadProfileEntries(){
