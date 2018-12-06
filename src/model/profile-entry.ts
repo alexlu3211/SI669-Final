@@ -10,5 +10,6 @@ export class ProfileEntry{
     cost: any;
     people: any;
     intro: string;
+    post: string;
     eventsId: string[];
 }

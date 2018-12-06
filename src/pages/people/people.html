@@ -9,11 +9,67 @@
 
 <ion-content padding>
 
-	<ion-item>
-	  <ion-label>Turn on the availability</ion-label>
-	  <ion-toggle [(ngModel)]="availability"></ion-toggle>
-	</ion-item>
-		<ion-card *ngIf="availability">
+	<ion-list>
+		<ion-item class="availability">
+		  <ion-label color="primary" *ngIf="!myProfile.available">Not Available Now</ion-label>
+		  <ion-label color="primary" *ngIf="myProfile.available">Available Now</ion-label>
+		  <ion-toggle [(ngModel)]="myProfile.available" (ionChange)="updateAvailability()"></ion-toggle>
+		</ion-item>
+	</ion-list>
+
+	<div *ngIf="!myProfile.available">
+		<ion-list>
+			<ion-item class="label-get-available">
+				<ion-icon name="megaphone" item-start large></ion-icon>
+				<ion-label text-wrap>
+					What do you want to eat? Become available to find Eatinders hanging out now!
+				</ion-label>
+			</ion-item>
+		</ion-list>
+
+		<ion-card>
+			<ion-card-content>
+				<ion-card-title color="primary">
+					I want to ...
+				</ion-card-title>
+				<ion-item>
+					<ion-input [(ngModel)]="myProfile.post" placeholder="explore Korean food">
+					</ion-input>
+				</ion-item>
+				<hr>
+			</ion-card-content>
+		</ion-card>
+
+		<ion-row>
+			<ion-col text-center>
+				<button ion-button round class="button-available" (click)="becomeAvailable()" [disabled]="false">BECOME AVAILABLE</button>
+			</ion-col>
+		</ion-row>
+	</div>
+
+	<div *ngIf="myProfile.available" class="available-content-view">
+			<ion-row>
+				<ion-col col-6 *ngFor="let profile of availableProfiles">
+					<ion-card class="namecard">
+
+						<div class="image-holder">
+							<img src="{{ profile.pic }}"/>
+						</div>
+						<ion-card-content>
+							<ion-card-title color="primary">
+								{{ profile.name }}
+							</ion-card-title>
+							<div class="post">
+								<p>{{ profile.post }}</p>
+							</div>
+						</ion-card-content>
+
+					</ion-card>
+				</ion-col>
+			</ion-row>
+	</div>
+
+<!-- 		<ion-card *ngIf="availability">
 			<ion-card-content class="col1">
 				<ion-grid>
 				  <ion-row>
@@ -53,6 +109,6 @@
 			</ion-grid>
 
 		</ion-card-content>
-	</ion-card>
+	</ion-card> -->
 
 </ion-content>

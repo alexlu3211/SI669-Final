@@ -36,8 +36,15 @@ export class ProfilePage implements OnInit{
     this.dataProvider.profileSubject.subscribe(update => {
       this.profileEntry = dataProvider.getProfileByUsername(this.username);
  
-      this.allergyLength = this.profileEntry.allergy.length;
-      this.preferenceLength = this.profileEntry.preference.length;
+      if (this.profileEntry.allergy != null) 
+        this.allergyLength = this.profileEntry.allergy.length
+      else 
+        this.allergyLength = 0;
+
+      if (this.profileEntry.preference != null) 
+        this.preferenceLength = this.profileEntry.preference.length
+      else 
+        this.preferenceLength = 0;
 
     })
   }

@@ -4,8 +4,6 @@ import { RestaurantEntry } from '../../model/restaurant-entry';
 import { ProfileEntry } from '../../model/profile-entry';
 import { EventEntry } from '../../model/event-entry';
 
-import { Observable } from 'rxjs/Observable';
-import { Observer } from 'rxjs/Observer';
 import { Subject } from 'rxjs/Subject';
 
 import { Storage } from '@ionic/storage';
@@ -37,12 +35,6 @@ export class DataProvider {
 	private eventEntries: EventEntry[] = [];
 	private username: string = "user001";
 
-	private eventObserver: any;
-	private eventObservable: Observable<EventEntry[]>;
-
-	private profileObserver: any;
-	private profileObservable: Observable<ProfileEntry>;
-
 	public restaurantSubject: any;
 	public profileSubject:any;
 	public eventSubject: any;
@@ -52,10 +44,6 @@ export class DataProvider {
 
 		firebase.initializeApp(firebaseConfig);
 		this.db = firebase.database();
-
-		this.eventObservable = Observable.create((observer)=> {
-			this.eventObserver = observer;
-		})
 
 		this.restaurantSubject = new Subject<any>();
 		this.profileSubject = new Subject<any>();
@@ -108,7 +96,6 @@ export class DataProvider {
 	}
 
 	public notifyRestaurantSubscribers(): void {
-		// this.restaurantObserver.next(undefined);
 		this.restaurantSubject.next(undefined);
 	}
 
@@ -117,6 +104,16 @@ export class DataProvider {
 			if (restaurant.id == id) 
 				return restaurant;
 		}
+	}
+
+	public getRestaurantName(id: string): RestaurantEntry[]{
+		let cuisine = "korean"
+		for (let e of this.restaurantEntries[cuisine]) {
+		  if (e.id === id) {
+		     return e.name
+		  }
+		}
+		return undefined;
 	}
 
 	public updateRestaurantEvents(cuisine:string, restaurantId: string, eventId: string){
@@ -209,6 +206,7 @@ export class DataProvider {
 					cost: 	    childSnapshot.val().cost,
 					people: 	childSnapshot.val().people,
 					intro: 		childSnapshot.val().intro,
+					post: 		childSnapshot.val().post,
 					eventsId: 	childSnapshot.val().eventsId,
 				};
 				this.profileEntries.push(entry);
@@ -222,12 +220,7 @@ export class DataProvider {
 	}
 
 	public getProfileEntries():ProfileEntry[] {  
-		let entriesClone = JSON.parse(JSON.stringify(this.profileEntries));
-		return entriesClone;
-	}
-
-	public getProfileObservable(): Observable<any> {
-		return this.profileObservable; 
+		return this.profileEntries
 	}
 
 	public notifyProfileSubscribers(){
@@ -260,6 +253,14 @@ export class DataProvider {
 
 		dataRef.child(profileEntry.username).set(profileEntry);
 		this.notifyProfileSubscribers();
+	}
 
+	public updateAvailability(availability: boolean, post: string){
+		let dataRef = this.db.ref("/profiles");
+
+		dataRef.child(this.username).update({available: availability});
+		dataRef.child(this.username).update({post: post});
+
+		this.notifyProfileSubscribers();		
 	}
 }

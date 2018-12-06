@@ -6,7 +6,35 @@
 
 </ion-header>
 
-
 <ion-content padding>
 
+	<ion-card *ngFor="let event of currentEventEntries">
+		<ion-card-content (click)=gotoScheduleDetail(event)>
+			<ion-row>
+				<ion-col col-3>
+					<img class="host-picture" src="{{ dataProvider.getProfilePicByUsername(event.hostId) }}"/>
+				</ion-col>
+
+				<ion-col col-9>
+					<h2> {{ dataProvider.getProfileByUsername(event.hostId).name }}'s Event </h2>
+					<h3> <ion-icon name="alarm"></ion-icon> {{ event.date | date:'short'}} </h3>
+					<p> <ion-icon ios="ios-at-outline" md="md-at"></ion-icon> {{ dataProvider.getRestaurantName(event.restaurantId) }} </p>
+					<p> "{{ event.memo }}"</p>
+					
+					<p class="label-participants"> There are {{ event.participantsId?.length }} people in this event </p>
+
+					<ion-row>
+						<div class="guest-picture-container">
+
+
+						</div>
+					</ion-row>
+				</ion-col>
+			</ion-row>
+
+
+
+		</ion-card-content>
+
+	</ion-card>
 </ion-content>

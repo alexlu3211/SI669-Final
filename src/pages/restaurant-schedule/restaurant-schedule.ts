@@ -34,7 +34,6 @@ export class RestaurantSchedulePage {
 
   createEvent(){
 
-    this.event.time = new Date(this.event.time).toString();
     console.log(this.event.time);
     
     this.event.restaurantId = this.restaurantId;

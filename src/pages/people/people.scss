@@ -5,4 +5,87 @@ page-people {
 	.col2{
 		background-color: orange;
 	}
+
+	ion-list{
+		padding: 0 16px !important;
+	}
+
+	ion-item{
+		padding-left: 0 !important;
+	}
+
+	.availability{
+		border-top: none !important;
+		background-color: #f8f8f8 !important;
+
+		ion-label{
+			font-size: 16px !important;
+			font-weight: 900 !important;
+		}
+	}
+
+	.label-get-available{
+		border: none !important;
+		background-color: #f8f8f8 !important;
+
+		ion-icon{
+			color: #808080 !important;
+		}
+
+		ion-label{
+			font-weight: 400 !important;
+			font-size: 14px !important;
+			color: #808080;
+		}
+	}
+
+	ion-card-title{
+		font-weight: 700 !important;
+	}
+
+	.available-content-view{
+		padding:0 10px;
+	}
+
+	.namecard{
+		margin: 0 !important;
+		width: 100%;
+
+		.image-holder{
+			position: relative;
+			height: 160px !important;
+			width: 100%;
+			overflow: hidden;
+		}
+
+		ion-card-title{
+			font-size: 14px !important;
+			font-weight: 900 !important;
+		}
+
+		.post{
+			display: inline-block;
+			height: 34px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+
+			p{
+				font-size: 12px !important;
+			}
+		}
+	}
+
+	.button-available{
+
+		height: 40px;
+		font-weight: 800;
+		font-size: 12px;
+		letter-spacing: 2px;
+	
+		box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2) !important;
+
+		background-color: #f39c12;
+		background-image: linear-gradient(147deg, #f39c12 0%, #FF2525 74%);
+
+	}
 }

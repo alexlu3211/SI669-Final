@@ -5,38 +5,38 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <ion-row>
+        <ion-col col-3>
+          <img class="host-picture" src="{{ dataProvider.getProfilePicByUsername(eventEntry.hostId) }}"/>
+        </ion-col>
 
-  <ion-list>
-    <ion-list-header>Upcoming</ion-list-header>
-    <ion-card>
-  		<ion-card-content>
-  			<ion-grid>
-  			  <ion-row>
-  			    <ion-col class="col1">
-  			    	<img [src]="">
-  			    </ion-col>
-  			    <ion-col class="col2">
-                <h1>Name with People Count</h1>
-                <p>Restaurant Name</p>
-                <p>Time</p>
-                <!-- <p>{{entry.name}} with {{entry.count}}</p>
-  			        <p>{{entry.restaurant}}</p>
-  			        <p>{{entry}}</p> -->
-  			    </ion-col>
-  			  </ion-row>
+        <ion-col col-9>
+          <h2> {{ dataProvider.getProfileByUsername(eventEntry.hostId).name }}'s Event </h2>
+          <h3> <ion-icon name="alarm"></ion-icon> {{ eventEntry.date | date:'short'}} </h3>
+          <p> <ion-icon ios="ios-at-outline" md="md-at"></ion-icon> {{ dataProvider.getRestaurantName(eventEntry.restaurantId) }} </p>
+          <p> "{{ eventEntry.memo }}"</p>
+         
+
+          <p class="label-participants"> There are {{ eventEntry.participantsId?.length }} people in this event </p>
+
           <ion-row>
-  			    <ion-col class="col1">
-  			    	<img [src]="">
-              <p>Test</p>
-  			    </ion-col>
-            <!-- <ion-col class="col1" ngFor*="entry in eventEntry">
-  			    	<img [src]="{{ entry.pic }}">
-              <p>{{ entry.name }}</p>
-  			    </ion-col> -->
-  			  </ion-row>
-  			</ion-grid>
-  		</ion-card-content>
-  	</ion-card>
-  </ion-list>
+            <div class="guest-picture-container">
+          
 
+            <img *ngFor="let participantId of eventEntry.participantsId"
+               class="guest-picture" 
+               src="{{ dataProvider.getProfilePicByUsername(participantId) }}" />
+            </div>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
+
+
+
+    </ion-card-content>
+
+  </ion-card>
 </ion-content>
