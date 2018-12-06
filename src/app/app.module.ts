@@ -18,6 +18,7 @@ import { RestaurantSchedulePageModule } from '../pages/restaurant-schedule/resta
 import { ProfileEditPageModule } from '../pages/profile-edit/profile-edit.module';
 import { SignupPageModule } from '../pages/signup/signup.module';
 import { ScheduleDetailPageModule } from '../pages/schedule-detail/schedule-detail.module';
+import { PeopleDetailPageModule } from '../pages/people-detail/people-detail.module';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -55,7 +56,8 @@ import { DataProvider } from '../providers/data/data';
     RestaurantSchedulePageModule,
     ProfileEditPageModule,
     SignupPageModule,
-    ScheduleDetailPageModule
+    ScheduleDetailPageModule,
+    PeopleDetailPageModule
 
   ],
   bootstrap: [IonicApp],

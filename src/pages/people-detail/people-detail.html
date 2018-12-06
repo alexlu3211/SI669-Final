@@ -1,0 +1,64 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>People Detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item class="avatar-item">
+    <ion-avatar item-start>
+      <img class="avatar" src="{{ profileEntry.pic }}">
+    </ion-avatar>
+    <h1> {{ profileEntry.name }} </h1>
+    <p> {{ profileEntry.location }} </p>
+  </ion-item>
+
+  <ion-card>
+    <ion-card-header color="primary">Your Self Introduction</ion-card-header>
+    <ion-card-content>
+      <p *ngIf="profileEntry.intro==''">You haven't set up your introduction yet. Set your introduction to let people know about you!</p>
+      <p *ngIf="profileEntry.intro!=''">{{ profileEntry.intro }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header color="primary">Your Food Allergies</ion-card-header>
+    <ion-card-content>
+      <p *ngIf="allergyLength == 0">You haven't specified any allergies yet.</p>
+      <ion-chip *ngFor = "let item of profileEntry.allergy">
+        <ion-label>{{item}}</ion-label>
+      </ion-chip>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header color="primary">Your Food Preferences</ion-card-header>
+    <ion-card-content>
+      <p *ngIf="allergyLength == 0">You haven't specified any preferred foods yet.</p>
+      <ion-chip *ngFor = "let item of profileEntry.preference">
+        <ion-label>{{item}}</ion-label>
+      </ion-chip>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header color="primary">Your Preferred Price Range</ion-card-header>
+    <ion-card-content>
+        <p *ngIf="profileEntry.cost == null">You haven't set up your preferred price range yet.</p>
+        <p *ngIf="profileEntry.cost != null">{{ profileEntry.cost }} </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header color="primary">Your Preferred Number of People</ion-card-header>
+    <ion-card-content>
+        <p *ngIf="profileEntry.people == null">You haven't set up your preferred number of people to have meal with yet.</p>
+        <p *ngIf="profileEntry.people != null">{{ profileEntry.people }} and below</p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

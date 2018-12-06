@@ -1,0 +1,30 @@
+page-people-detail {
+
+	h1{
+		font-weight: 800 !important;
+	}
+
+	.avatar{
+		height: 80px !important;
+		width: 80px !important;
+	}
+
+	.avatar-item{
+		.item-inner{
+			border-bottom: none !important;
+		}
+
+		background-color: #f8f8f8;
+	}
+
+	ion-card{
+		ion-card-header{
+			font-weight: 900 !important;
+		}
+	}
+
+	ion-chip{
+		margin-right: 10px !important;
+	}
+
+}

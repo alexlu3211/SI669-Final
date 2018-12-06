@@ -3,6 +3,9 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { DataProvider } from '../../providers/data/data';
 import { ProfileEntry } from '../../model/profile-entry';
 
+import { PeopleDetailPage } from '../people-detail/people-detail';
+
+
 @Component({
   selector: 'page-people',
   templateUrl: 'people.html',
@@ -21,10 +24,11 @@ export class PeoplePage {
               public dataProvider: DataProvider, 
               private alertCtrl: AlertController) {
     
+    this.username = dataProvider.getUserName();
     this.myProfile = new ProfileEntry();
+    this.dataProvider.loadProfileEntries();
 
     this.dataProvider.profileSubject.subscribe(update => {
-      this.username = dataProvider.getUserName();
       this.myProfile = dataProvider.getProfileByUsername(this.username);
       if (this.myProfile.post != null) this.myProfile.post = "";
 
@@ -36,20 +40,23 @@ export class PeoplePage {
           this.availableProfiles.push(profile);
         }
       }
+      console.log(this.availableProfiles)
     })
-
-    this.dataProvider.loadProfileEntries();
-
-
   }
 
   updateAvailability(){
-      this.dataProvider.updateAvailability(this.myProfile.available);
+    if (!this.myProfile.available)
+      this.myProfile.post = "";
+    this.dataProvider.updateAvailability(this.myProfile.available, this.myProfile.post);
   }
 
   becomeAvailable(){
     this.myProfile.available = true;
-    this.dataProvider.updateAvailabilityPost(this.myProfile.available, this.myProfile.post);
+    this.updateAvailability();
+  }
+
+  gotoPeopleDatail(availableProfiles: ProfileEntry){
+    this.navCtrl.push(PeopleDetailPage, {profileEntry: availableProfiles});      
   }
 
   // private setupschedule(username: string){
