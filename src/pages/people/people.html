@@ -50,7 +50,7 @@
 	<div *ngIf="myProfile.available" class="available-content-view">
 			<ion-row>
 				<ion-col col-6 *ngFor="let profile of availableProfiles">
-					<ion-card class="namecard">
+					<ion-card class="namecard" (click)="gotoPeopleDatail(profile)">
 
 						<div class="image-holder">
 							<img src="{{ profile.pic }}"/>

@@ -21,6 +21,7 @@ export class RestaurantDetailPage {
   restaurantEntry: RestaurantEntry;
   eventEntries: EventEntry[] = [];
   currentEventEntries: EventEntry[] = [];
+  checkHost: false;
 
   constructor(public navCtrl: NavController, 
   			  public navParams: NavParams, 

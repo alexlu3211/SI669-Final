@@ -47,7 +47,7 @@
 
 			<ion-row>
 				<ion-col text-center>
-					<button ion-button round class="button-join">JOIN EVENT</button>
+					<button *ngIf="checkHost" ion-button round class="button-join">JOIN EVENT</button>
 				</ion-col>
 			</ion-row>
 

@@ -3,6 +3,9 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { DataProvider } from '../../providers/data/data';
 import { ProfileEntry } from '../../model/profile-entry';
 
+import { PeopleDetailPage } from '../people-detail/people-detail';
+
+
 @Component({
   selector: 'page-people',
   templateUrl: 'people.html',
@@ -50,6 +53,10 @@ export class PeoplePage {
   becomeAvailable(){
     this.myProfile.available = true;
     this.updateAvailability();
+  }
+
+  gotoPeopleDatail(availableProfiles: ProfileEntry){
+    this.navCtrl.push(PeopleDetailPage, {profileEntry: availableProfiles});      
   }
 
   // private setupschedule(username: string){
